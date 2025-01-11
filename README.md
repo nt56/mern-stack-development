@@ -25,6 +25,6 @@ This repository is designed to:
 
 For any questions or collaboration opportunities, connect with me:
 
-- **Email**: (tirthnagbhushan56@gmail.com)
-- **GitHub**: (https://github.com/nt56/)
-- **LinkedIn**:(https://www.linkedin.com/in/nagbhushan-tirth-887865229/)
+- **Email**: [nagabhushan tirth](tirthnagbhushan56@gmail.com)
+- **GitHub**: [nt56](https://github.com/nt56/)
+- **LinkedIn**:[nagabhushan tirth](https://www.linkedin.com/in/nagbhushan-tirth-887865229/)
