@@ -1,0 +1,86 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    background: url("./assets/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#container-1{
+    margin: 20px auto 20px auto;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 50px;
+    width: 900px;
+    height: 500px;
+    background-repeat: repeat;
+    background: url("./assets/luffy.jpg");
+    background-size: contain;
+}
+
+.heading{
+    font-weight: bolder;
+    text-align: left;
+    font-size:  50px;
+    color: white;
+    font-family: Poppins;
+    text-decoration: underline;
+    text-transform: capitalize;
+}
+
+.description{
+    color: white;
+    text-align: center;
+    padding-top: 300px;
+}
+
+#container-2 {
+    margin: 20px auto 20px auto;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 50px;
+    width: 900px;
+    height: 500px;
+    background-repeat: no-repeat;
+    background: url("./assets/zoro.webp");
+    background-size: contain;
+}
+
+#container-3 {
+    margin: 20px auto 20px auto;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 50px;
+    width: 900px;
+    height: 500px;
+    background-repeat: no-repeat;
+    background: url("./assets/sanji.jpg");
+    background-size: contain;
+}
+
+#container-4 {
+    margin: 20px auto 20px auto;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 50px;
+    width: 900px;
+    height: 500px;
+    background-repeat: no-repeat;
+    background: url("./assets/eren.webp");
+    background-size: contain;
+}
+
+#container-5 {
+    margin: 20px auto 20px auto;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 50px;
+    width: 900px;
+    height: 500px;
+    background-repeat: no-repeat;
+    background: url("./assets/gojo.jpg");
+    background-size: contain;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Embedding media</title>
+  </head>
+  <body>
+    <!-- Embedding a video 
+     For applying controls, add controls attribute
+     For autoplaying the video, apply atttribute autoplay
+     For looping the video apply attribute loop-->
+    <video
+      src="./media/5377267-uhd_3840_2160_25fps.mp4"
+      type="video/mp4"
+      width="350px"
+      height="200px"
+      autoplay
+      loop
+    ></video>
+    <!-- Embedding an audio -->
+    <audio
+      src="media/file_example_MP3_2MG.mp3"
+      type="audio/mp3"
+      controls
+    ></audio>
+    <!-- Embedding a pdf file -->
+    <!-- Using iframes -->
+    <iframe
+      src="media/Cafe Bhratah - Strategy Deck.pdf"
+      frameborder="1"
+      width="400px"
+      height="400px"
+    ></iframe>
+    <!-- Directly Embedding the pdf -->
+    <embed
+      src="media/Cafe Bhratah - Strategy Deck.pdf"
+      type="application/pdf"
+      width="400px"
+      height="400px"
+    />
+  </body>
+</html>
