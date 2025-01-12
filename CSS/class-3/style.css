@@ -1,0 +1,37 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box{
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
+    padding: 20px;
+    font-size: 50px;
+}
+
+#div-1{
+    position: relative;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+    background-color: aqua;
+}
+
+#div-2 {
+    position: relative;
+    top: -400px;
+    left: 130px;
+    z-index: 5;
+    background-color: aquamarine;
+}
+
+#div-3 {
+    position: relative;
+    top: -830px;
+    left: 250px;
+    z-index: 20;
+    background-color: blueviolet;
+}
