@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2D transform</title>
+    <style>
+      #d1 {
+        width: 200px;
+        height: 200px;
+        border: 2px solid black;
+        border-right: 4px solid blue;
+        background-color: rgb(186, 72, 72);
+        position: relative;
+        top: 200px;
+        left: 350px;
+      }
+      #d1:hover {
+        /* translate() rotate() scale() skew() */
+
+        /* translate() is used to move the element from one position to another */
+        /* transform: translate(50px, 50px); */
+        /* rotate() is used to rotate the element clockwise or anti-clockwise */
+        /* transform: rotate(-30deg); */
+        /* scale() is used to upsize or downsize the element in a given ratio */
+        /* transform: scale(1.3); */
+        /* skew() pulls the element in given angle along x or y axis */
+        transform: skew(30deg, 30deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="d1"></div>
+  </body>
+</html>

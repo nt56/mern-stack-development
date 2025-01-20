@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #d1 {
+        width: 70%;
+        background-color: darkgreen;
+        float: left;
+      }
+      #d2 {
+        width: 30%;
+        background-color: lightcoral;
+        float: left;
+      }
+      h1 {
+        color: white;
+        text-align: center;
+      }
+      /* max-width is used when we want to specify some
+       styling when the screen size becomes smaller than the specified size */
+      /* @media screen and (max-width: 665px) {
+        #d1 {
+          width: 50%;
+          background-color: darkblue;
+        }
+        #d2 {
+          width: 50%;
+          background-color: limegreen;
+        }
+      }
+      @media screen and (max-width: 405px) {
+        #d1 {
+          width: 100%;
+        }
+        #d2 {
+          width: 100%;
+        }
+        h1 {
+          font-size: 15px;
+          color: red;
+        }
+      } */
+
+      /* min-width is used when we want to specify some
+       styling when the screen size becomes greater than the specified size */
+      @media screen and (min-width: 430px) and (max-width: 820px) {
+        #d1 {
+          background-color: aqua;
+        }
+        #d2 {
+          background-color: yellow;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="d1"><h1>This is a Div 1</h1></div>
+    <div id="d2"><h1>This is a Div 2</h1></div>
+  </body>
+</html>

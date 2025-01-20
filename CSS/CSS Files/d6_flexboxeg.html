@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox example</title>
+    <style>
+      #heading {
+        width: 100%;
+        border: 2px solid black;
+        border-radius: 15px;
+        background-color: darkblue;
+        padding: 30px;
+      }
+      h1 {
+        color: gold;
+        font-size: 40px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      h3 {
+        font-size: 28px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      #navbar {
+        height: 60px;
+        background-color: rgb(56, 56, 133);
+        margin: 10px;
+      }
+      ul {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-evenly;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="heading">
+      <h1>SpeedUp Infotech</h1>
+      <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+    </div>
+    <div id="navbar">
+      <ul type="none">
+        <li>Home</li>
+        <li>Contact</li>
+        <li>Courses</li>
+        <li>Careers</li>
+        <li>About Us</li>
+      </ul>
+    </div>
+  </body>
+</html>

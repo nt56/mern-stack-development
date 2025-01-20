@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Shadows</title>
+    <style>
+      #d1 {
+        width: 300px;
+        height: 200px;
+        text-align: center;
+        border: 2px solid black;
+        position: relative;
+        top: 200px;
+        left: 400px;
+        background-color: mediumslateblue;
+        /* x-axis y-axis blur-radius spread-radius color direction(optional) */
+        box-shadow: 25px 50px 5px -10px gray;
+      }
+      h1 {
+        color: red;
+        /* x-axis y-axis blur-radius color  */
+        text-shadow: 10px 10px 3px black;
+      }
+      p {
+        color: red;
+        /* x-axis y-axis blur-radius color  */
+        text-shadow: 10px 10px 3px black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="d1"></div>
+    <h1>CSS MODULE</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, iste?</p>
+  </body>
+</html>

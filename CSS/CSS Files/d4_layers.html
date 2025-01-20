@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Layers</title>
+    <style>
+      div {
+        width: 250px;
+        height: 250px;
+        border: 2px solid black;
+        text-align: center;
+      }
+      #d1 {
+        position: relative;
+        background-color: red;
+        z-index: 1;
+      }
+      #d2 {
+        position: relative;
+        top: -150px;
+        left: 150px;
+        background-color: blue;
+        z-index: 2;
+      }
+      #d3 {
+        position: relative;
+        top: -350px;
+        left: 250px;
+        background-color: green;
+        z-index: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="d1">
+      <h1>HTML</h1>
+      <p>Hyper Text markup Language</p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius,
+        voluptatibus.
+      </p>
+    </div>
+    <div id="d2">
+      <h1>CSS</h1>
+      <p>Cascading Style Sheets</p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius,
+        voluptatibus.
+      </p>
+    </div>
+    <div id="d3">
+      <h1>Bootstrap</h1>
+      <p>CSS Library for faster UI development</p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius,
+        voluptatibus.
+      </p>
+    </div>
+  </body>
+</html>

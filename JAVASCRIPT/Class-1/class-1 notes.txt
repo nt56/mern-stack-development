@@ -1,0 +1,61 @@
+ABOUT:	
+	- JS is OOP language which used by the dev for client side as well as server side.
+	- It i a powerful scripting lang which gets executed from top to bottom and works on our browser.
+	- the diff between JS and other languages is that JS code get compiled in the runtime unlike other languages which explicitly which compiles the code then execute.
+	- JS is not a compiled language but it is translated language. that means the code gets translated in browser at the time of execution.
+	- translator for this comes in-built from the browser.
+	- 1995 by Breinden Eich in 10 days.
+
+
+FEATURES:
+	- structured language
+	- loosely types language
+	- light-weight 
+	- interpreted 
+	- platform independent
+	- case sensitive 
+	- good control over the web browser
+
+
+JAVASCRIPT:
+	- event based
+	- single threaded
+	- consumes less memory(RAM)
+	- used to build web, mobile app etc.
+	- object based
+
+
+JAVA:
+	- class based 
+	- multi threaded
+	- consumes more memory(RAM)
+	- used to build standalone and enterprise level applications
+	- class based
+	
+
+EXAMPLE:
+	- LinkedIn
+	- Amazon
+	- Angry Birds
+	- Netflix
+	- Uber
+
+
+APPICATIONS:
+	- client side scripting
+	- server side scripting
+	- dynamic dropdowns
+	- displaying popups and dialog boxes
+	- dynamic props
+
+Writing JS:
+	- inline - inside element itself
+	- internal - inside head using script tag
+	- external - different.js file and link with script tag
+
+
+Output Possibilities in JS:
+	- console.log()	//helps us to display output in the console of the browser
+	- alert();	//It displays the output in a pop up box
+	- document.write("");	//It renders the output on the page
+	- innerHTML	//It changes the HTML content of the given element

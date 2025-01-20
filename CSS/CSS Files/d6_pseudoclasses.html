@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo Classes</title>
+    <style>
+      /* li:first-child {
+        font-size: 20px;
+        color: blue;
+        background-color: green;
+      } */
+      /* li:nth-child(even) {
+        background-color: lightskyblue;
+      }
+      li:nth-child(odd) {
+        background-color: rgb(216, 144, 144);
+      } */
+      li:nth-child(3n) {
+        background-color: lightslategrey;
+      }
+      li:nth-last-child(3) {
+        background-color: darkseagreen;
+      }
+      li:last-child {
+        color: red;
+        font-size: 30px;
+      }
+      /* first-child
+      last-child
+      nth-child
+      nth-last-child */
+    </style>
+  </head>
+  <body>
+    <!-- Pseudo is the special state of the element. When we have multiple child elements
+     and we want to work with specific elements, we use pseudo classes. -->
+    <ul>
+      <li>A</li>
+      <li>B</li>
+      <li>C</li>
+      <li>D</li>
+      <li>E</li>
+      <li>F</li>
+      <li>G</li>
+      <li>H</li>
+      <li>I</li>
+      <li>J</li>
+    </ul>
+  </body>
+</html>
