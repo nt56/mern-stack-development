@@ -1,0 +1,135 @@
+Variables:
+	- these are used to store some data
+	- it actually allocates some space in memory for the data
+	- variable is made up of a declator and an identifier
+	- ex : var a = 10;
+	- var --> declarator
+	
+
+Variables Rules:
+	- it should not contain any symbol, except for '_' and '$'
+	- the name of identifier should not start with number but it can end with a number, the name of identifier should not be number
+	- can't use space between two words use '_', camelCase, Pascal Case
+	- name of identifier is should not be reserved keyword
+
+
+Declarators:
+	- these are reserved keywords of JavaScript
+	- var, let, const
+	
+
+1. var:
+	- global scope
+	- from older version of JS
+	- allows re-declaration and reinitialization
+	-snippet:
+		var a = 30;
+		console.log(a);	//30
+
+		function demo(){
+    		   var a = 150;
+    		   console.log(a); //150
+		}
+
+		demo();
+		console.log(a);//30
+
+2. let:
+	- block scope
+	- from modern JS 
+	- can reinitialize and can't redeclare 
+	- snippet:
+		let a = 30;
+		console.log(a);	//30
+
+		function demo(){
+    		   let a = 150;
+		   a = 200;
+    		   console.log(a);//200
+		}
+
+		demo();
+		console.log(a);//30
+
+3. const:
+	- from modern JS
+	- block level 
+	- can't reinitialize and can't redeclare
+	- snippet:
+		const a = 30;
+		console.log(a);	//30
+
+		function demo(){
+    		   const a = 150;
+		   a = 200;//error
+    		   console.log(a);//150
+		}
+
+		demo();
+		console.log(a);//30
+
+
+Hoisting:
+	- It is default behaviour of Javscript
+    - It means to rise up/to take up 
+    - The normal code writing practice is:
+    	1. Declare variable
+    	2. Intialize variable 
+    	3. Use variable
+
+    - Due to hoisting we can change the way we write the code.
+    - Hoisting allows us to initialize and use the variables even before decalring them, because it takes up the 
+      declaration of variables to the top of the code before starting the execution.
+    - Javascript hoists  the variables to the top of code  before execution. So automatically the variables get declared first and then 
+      intialized and used
+    - Functions also get get hoisted
+    - var is hoisted
+    - let and const cannot be hoisted
+
+
+Assignment Operators: =, +=, -=, *=, /=, %=
+
+Arithmetic Operators: +, -, *, /, %
+
+post and pre Increment: ++a, a++
+
+post and pre decrement: --a, a--
+
+Logical Operator: !, &&, ||
+
+== --> checks value only (10 == '10') -> (true)
+=== --> checks value as well as data type (10 === '10') -> (false)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
