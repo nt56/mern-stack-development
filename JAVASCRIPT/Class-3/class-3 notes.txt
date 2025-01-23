@@ -1,0 +1,14 @@
+Use Strict:
+    - it is a pragama(rule) which tells the browser how to execute a js code 
+
+Modern JS Operators:
+    - typeof (used to describe the datatype of the variable)
+    - ternary Operators (alternative of if-else statement)
+    - nullish coelscing Operators (uses if value is assigned if not assigned then it uses first parameter. 'variable ?? default value')
+    - exponential Operators (used to calculate calculate value of number raised to given power. 'number**power')
+    - concatnation Operators (joining purpose)
+
+Data Types:
+    - primary (number, string, null, string, undefined, boolean, BigInt, symbol(unique identifications))
+    - non primary (function, array, object)
+
