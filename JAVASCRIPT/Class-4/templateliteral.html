@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template literal</title>
+  </head>
+  <body>
+    <script>
+      // Old Coventional method
+      //   Value assignment
+      document.write("This is Modern JS 101 batch");
+      document.write("<br/>");
+      document.write("The students are very studious");
+      document.write("<hr/>");
+
+      //   Dynamic data access
+      //   Reference assignment
+      let st1 = "This is Modern JS 101 batch";
+      let st2 = "The  students complete their tasks on time";
+      document.write(st1 + "<br/>" + st2 + "<hr/>");
+
+      //   Modern Javascript
+      // Template Literal
+      let nm = "ABC";
+      let skill = "Javascript";
+      document.write(
+        `<h1>Modern Javascript 101</h1><br/><p>I told you on the first day,"The sessions are going to be very informative!"</p>`
+      );
+      document.write(`The student named ${nm} is skilled in ${skill}`);
+    </script>
+  </body>
+</html>

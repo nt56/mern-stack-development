@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iterative Loops</title>
+  </head>
+  <body>
+    <!-- 
+        Iterative Loops: It is a type of control statement which is used to execute a 
+                        block of code repeatedly until the given condition is valid
+
+        
+        1. do while
+        syntax:
+
+        do{
+            Code to repeated
+        }while(condition)
+
+        The code is executed first and then the condition is checked.
+        Due to this the code gets executed atleast once
+
+
+
+        2. while
+        syntax:
+        while(condition){
+            Code to be repeated
+        }
+        The condition is checked first and then the code is executed
+        Due to this the code does not get executed at all if the conditoin is invalid
+
+
+        3. for loop: 
+        syntax:
+
+        for(variable_declaration, condition, increment/decrement){
+        
+            Code to repeated
+        
+        }
+    
+    -->
+    <script>
+      let num = 1;
+      do {
+        console.log(num);
+        // num++;
+      } while (num < 1);
+
+      console.log("In while loop");
+      while (num < 1) {
+        console.log(num);
+        // num++;
+      }
+      console.log("In for loop");
+      for (let num1 = 2; num1 <= 50; num1++) {
+        console.log(num1);
+        num1++;
+      }
+    </script>
+  </body>
+</html>

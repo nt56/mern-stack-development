@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        Functions
+
+        It is a Non-primitive datatype
+        It is used to execute a block of code only necessary
+        It is used to execute a block of code repeatedly in our program
+        We can re-use the code again and again
+
+        We use parameters while declaring the function to allow the use of dynamic values
+
+        We use arguments while calling the function to supply values to the paramenters
+
+        We use defalut parameters in case the user does not provide any arguments.
+
+
+        return keyword:
+        1. It gives the value outside the function block for using in other functions/uses
+
+        2. It stops the execution of block of code. The code written after return keyword does not get executed
+    
+    -->
+    <!-- Event based function call -->
+    <button onclick="zoom()">Enlarge Image</button>
+    <button onclick="add()">Add Numbers</button>
+    <button onclick="avg()">Calculate Average</button>
+    <br />
+    <img src="media/nature.jpeg" alt="" width="400px" id="img" />
+    <h1 id="resAdd"></h1>
+    <h1 id="resAvg"></h1>
+    <script>
+      //direct execution
+      //   console.log("Hello everyone!");
+
+      //   //   Function to be executed
+      //   function welcome() {
+      //     console.log("This is a nice afternoon!");
+      //   }
+      //   //Function call
+      //   welcome();
+
+      //   let a = 10;
+      //   let b = 40;
+      //Normal way of writing function
+      //   function add() {
+      //     console.log(a + b);
+      //   }
+
+      //   function add(num1, num2) {
+      //     console.log(num1 + num2);
+      //   }
+      //   Normal function call
+      //   add();
+
+      //   Function call with arguments
+      //   add(30, 100);
+
+      //   Default parameter
+      function demo(num1 = 1, num2 = 1) {
+        console.log(num1 + num2);
+      }
+      //   No arguments given
+      demo();
+
+      //   function zoom() {
+      //     document.getElementById("img").style.transform = "scale(1.3)";
+      //     document.getElementById("img").style.transform =
+      //       "translate(200px, 200px)";
+      //   }
+      //   function add() {
+      //     let num1 = +prompt("enter first number");
+      //     let num2 = +prompt("enter second number");
+      //     let addn = num1 + num2;
+      //     document.getElementById("res").innerHTML = `The addition is: ${addn}`;
+      //   }
+      function sumMarks() {
+        let mk1 = +prompt("enter first subject marks");
+        let mk2 = +prompt("enter second subject marks");
+        let mk3 = +prompt("enter third subject marks");
+        let mk4 = +prompt("enter fourth subject marks");
+        let mk5 = +prompt("enter fifth subject marks");
+        let sum = mk1 + mk2 + mk3 + mk4 + mk5;
+        document.getElementById(
+          "resAdd"
+        ).innerHTML = `The sum of marks is: ${sum}`;
+        return sum;
+      }
+
+      //   Returning the value
+      //   var sum = sumMarks();
+      function avg() {
+        let sum = sumMarks();
+        let avgMarks = sum / 5;
+        document.getElementById(
+          "resAvg"
+        ).innerHTML = `The avg of marks is: ${avgMarks}`;
+      }
+
+      //   function demo() {
+      //     console.log("This is before return keyword");
+      //     console.log("This is before return keyword");
+      //     console.log("This is before return keyword");
+      //     console.log("This is before return keyword");
+      //     return;
+      //     // Below messages won't be displayed
+      //     console.log("This is after return keyword");
+      //     console.log("This is after return keyword");
+      //     console.log("This is after return keyword");
+      //     console.log("This is after return keyword");
+      //     console.log("This is after return keyword");
+      //     console.log("This is after return keyword");
+      //     console.log("This is after return keyword");
+      //     console.log("This is after return keyword");
+      //     console.log("This is after return keyword");
+      //     console.log("This is after return keyword");
+      //     console.log("This is after return keyword");
+      //     console.log("This is after return keyword");
+      //     console.log("This is after return keyword");
+      //   }
+      //   demo();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Symbol in JS</title>
+  </head>
+  <body>
+    <!-- 
+    
+    Modern JS symbol
+
+    It is a primitive datatype.
+    It is a modern javascript feature which is used to generate unique keys in objects
+    The keys generated using symbol are not accessible by any user and cannot be viewed.
+
+    Student 1{
+        UniqueKey1
+    }
+
+
+    Student 2{
+        UniqueKey2(Symbol datatype)
+    }
+    
+    -->
+    <script>
+      let sym1 = Symbol("abc");
+      let sym2 = Symbol("abc");
+
+      console.log(sym1 === sym2);
+
+      let st1 = {};
+      let st2 = {};
+
+      st1[sym1] = "Tushar";
+      st2[sym2] = "Sanjay";
+
+      console.log(st1);
+      console.log(st2);
+
+      console.log(typeof sym1);
+      console.log(typeof sym2);
+    </script>
+  </body>
+</html>

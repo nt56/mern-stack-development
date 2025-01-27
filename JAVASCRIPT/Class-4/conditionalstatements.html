@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Control Statements 
+    
+    Student = [15,18,9,19 , 5, 7, 8, 3, 12, 15, 14, 11, 3, 4, 2, 4]
+
+
+    Conditional statements: They check for given condition and get executed only once
+
+
+    Iterative loops: They are used for performing some task repeatedly 
+
+    ******************************************************************************
+
+    Conditional statements:
+
+    if
+    else
+    else if
+    switch
+
+
+
+
+    TASK 1:
+
+    Write a code which will take two inputs from user, username and password.
+    The code will check if the username matches 'admin', it is same, it will check password.
+    The passowrd should be 1234
+
+    If the password does not match, it will give error that 'Password is incorrect'
+    If the password matches, it will display "Logged In Successfully!"
+
+    If the username does not match 'admin' it will display 'User not found'
+
+
+
+    TASK 2:
+
+    Take two variables as inWeekend(boolean) and isSunny(boolean) [No need of user input]
+
+    If isWeekend and isSunny are both true, then display message "Go out and enjoy!"
+    If isWeekend is true and isSunny is false, then display message "Netflix and Chill!"
+    If isWeekend and isSunny are both false, then display message "You really need to focus on work!"
+
+
+
+
+
+    
+    -->
+    <script>
+      // if
+
+      //   let age = +prompt("Enter age");
+      //   if (age >= 18) {
+      //     document.write(`<h1>You are eligible for voting!</h1>`);
+      //   } else {
+      //     document.write(`<h3>Sorry, you cannot vote right now....</h3>`);
+      //   }
+
+      //   document.write(
+      //     `${
+      //       age >= 18
+      //         ? "<h1>You are eligible for voting</h1>"
+      //         : "<h3>Sorry, you cannot vote right now....</h3>"
+      //     }`
+      // );
+
+      //   let marks = +prompt("Enter your marks");
+      //   if (marks >= 80) {
+      //     document.write(`<h1>You have scrored A Grade</h1>`);
+      //   } else if (marks >= 60 && marks < 80) {
+      //     document.write(`<h2>You have scrored B Grade</h2>`);
+      //   } else if (marks >= 40 && marks < 60) {
+      //     document.write(`<h3>You have scrored C Grade</h3>`);
+      //   } else {
+      //     document.write(`<h5>You have scrored D Grade</h5>`);
+      //   }
+
+      let color = +prompt("Select a color: \n1. Red 2. Blue 3. Green");
+      //   if (color == 1) {
+      //     document.body.style.backgroundColor = "red";
+      //   } else if (color == 2) {
+      //     document.body.style.backgroundColor = "blue";
+      //   } else if (color == 3) {
+      //     document.body.style.backgroundColor = "green";
+      //   } else {
+      //     document.write(`<h1>Invalid choice</h1>`);
+      //   }
+
+      switch (color) {
+        case 1:
+          document.body.style.backgroundColor = "red";
+          break;
+        case 2:
+          document.body.style.backgroundColor = "blue";
+          break;
+        case 3:
+          document.body.style.backgroundColor = "green";
+          break;
+        default:
+          document.write(`<h1>Invalid choice</h1>`);
+          break;
+      }
+    </script>
+  </body>
+</html>

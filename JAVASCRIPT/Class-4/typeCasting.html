@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+    Typecasting 
+
+    To convert the data from one type into the other type
+
+    1. Modifying the prompt
+    2. Number(): It considers the digits after a numeric character. It can be used 
+                    to generate secimal values, i.e. float numbers
+    3. parseInt(): It ignores the digits after a numeric character. 
+    
+    -->
+    <script>
+      //   let nm = prompt("Enter your name");
+      //   document.write(`<h1>Hello ${nm} ! Good afternoon!</h1>`);
+      //   console.log(typeof nm);
+
+      //   let num1 = prompt("Enter a number:");
+      //   let num2 = prompt("Enter another number:");
+      //   //   Default datatype is string
+      //   console.log(num1 + num2); //datatype is string
+      //   console.log(typeof num1);
+
+      // Modifying the prompt
+      let num1 = prompt("Enter a number: ", 10);
+      console.log(`${num1} is of type ${typeof num1}`);
+
+      //   Number method
+      let num2 = Number(num1);
+      console.log(`${num2} is of type ${typeof num2}`);
+
+      let num3 = parseInt(num1);
+      console.log(`${num3} is of type ${typeof num3}`);
+    </script>
+  </body>
+</html>
