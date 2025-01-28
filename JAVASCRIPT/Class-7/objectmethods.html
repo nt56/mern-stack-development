@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        Inbuilt methods in Objects
+
+        Object.keys(objName): Returns an array of all keys in the object
+        Object.values(objName): Retruns an array of all the values in the object
+        Object.entries(objName): Returns an array of multiple arrays containing the key and values of the objects
+        Object.getOwnPropertyNames(objName): Returns all the keys of the object itself and ignores the keys of nested object. Returns all the enumerable as well as non-enumrable properties
+        Object.is(Value1, Value2): Returns whether the both values are same or not like strict equality(checks value and datatype)
+        isFinite(Value): Checks whether the value is finite or infinite and returns a boolean value Returns true for numbers and boolean values given Returns false for String
+        isNaN(Value): Checks whether the given value is number or not
+        Object.isFrozen(objName): Checks whether the object is Frozen or not
+        Object.isSealed(objName): Checks whether the object is sealed or not.
+    -->
+    <script>
+      let obj1 = {
+        id: 101,
+        id2: 101,
+        name: "Tushar",
+        phone: 8987675654,
+        mail: "tushar@gmail.com",
+        phoneDetails: {
+          make: "Vivo",
+          model: "Y20G",
+        },
+      };
+
+      console.log(Object.keys(obj1));
+      console.log("*****************");
+      console.log(Object.values(obj1));
+      console.log("*****************");
+      console.log(Object.entries(obj1));
+      console.log("******************");
+      console.log(Object.getOwnPropertyNames(obj1));
+      console.log("******************");
+      console.log(Object.is(10, 10));
+      console.log("******************");
+      console.log(isFinite("String"));
+      console.log("******************");
+      console.log(isNaN("ABC"));
+      console.log("**********************");
+      console.log(Object.isFrozen(obj1));
+      console.log("******************");
+      console.log(Object.isSealed(obj1));
+    </script>
+  </body>
+</html>

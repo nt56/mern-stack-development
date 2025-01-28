@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="createNewStudent()">Create Student</button>
+    <button onclick="printStudent()">Print Student</button>
+
+    <!-- 
+        Objects in javascript
+        -It is entitiy which stores large amount of data.
+        -Object can hold similar or dissimilar type of data.
+        -The data is stored in form of key value pairs.
+        -The indexing takes place based on keys.
+        -Javascript is a object based language.
+
+        Creating objects:
+        1. Literal method
+        2. Creating instance.
+        3. Using constructor
+
+        Constructor: It is special function which is used to initialize values to the objects
+    
+    -->
+    <script>
+      // Creating a variable to store object
+      let std1;
+
+
+
+      // Literal method
+      let obj1 = {
+        id: 101,
+        name: "ABC",
+        phone: 9887654567,
+        mail: "abc@gmail.com",
+      };
+      console.log(obj1);
+      console.log("*******************");
+
+
+
+      //   Creating instance
+      let obj2 = new Object();
+      obj2.id = 102;
+      obj2.name = "MNO";
+      obj2.phone = 7867564398;
+      obj2.mail = "mno@gmail.com";
+      console.log(obj2);
+      console.log("*******************");
+
+
+
+      //   Using constructor
+      function student(id, nm, phn, mid) {
+        this.id = id;
+        this.name = nm;
+        this.phone = phn;
+        this.mail = mid;
+      }
+      let obj3 = new student(103, "PQR", 9878656789, "pqr@gmail.com");
+      console.log(obj3);
+      console.log("*******************");
+
+      //dynamic data from user using constructor
+      function createNewStudent() {
+        let id = +prompt("Enter id");
+        let nm = prompt("Enter name");
+        let phn = +prompt("Enter phone");
+        let mid = prompt("Enter mail");
+        std1 = new student(id, nm, phn, mid);
+      }
+
+      //printing obje data
+      function printStudent() {
+        for (let a in std1) {
+          console.log(`${a}:${std1[a]}`);
+        }
+      }
+
+
+      //iterating through objects and some operations
+      let obj4 = {
+        id: 104,
+        name: "XYZ",
+        phone: 89749674986,
+        mail: "xyz@gmail.com",
+        skills: ["HTML", "CSS", "Bootstrap", "Javascript"],
+        phone: {
+          make: "Samsung",
+          model: "S25 Ultra",
+          ram: "12gb",
+          storage: "256gb",
+          price: 150000,
+        },
+      };
+      console.log(obj4.phone.price);
+      for (let keys in obj4) {
+        console.log(`${keys}:${obj4[keys]}`);
+      }
+      console.log("********************");
+      for (let keys in obj4.phone) {
+        console.log(`${keys}:${obj4.phone[keys]}`);
+      }
+      console.log("********************");
+      console.log("Updating object data");
+      obj4.name = "Rohit";
+      console.log(obj4);
+      obj4.phone.price = 180000;
+      console.log(obj4.phone);
+      obj4.phone.price = 100000;
+      console.log(obj4.phone);
+
+
+
+      //   *****************************
+      //   let num1 = 10123;
+      //   let numInstance = new Number(98767);
+      //   console.log(`${num1} is of type ${typeof num1}`); //number
+      //   console.log(`${numInstance} is of type ${typeof numInstance}`); //object
+
+      //   let str1 = "Suyash";
+      //   let strInstance = new String("Sairaj");
+      //   console.log(`${str1} is of type ${typeof str1}`); //number
+      //   console.log(`${strInstance} is of type ${typeof strInstance}`); //object
+
+      //   let bool1 = true;
+      //   let boolInstance = new Boolean(false);
+      //   console.log(`${bool1} is of type ${typeof bool1}`); //number
+      //   console.log(`${boolInstance} is of type ${typeof boolInstance}`); //object
+      //   *****************************************
+
+
+
+
+      let obj5 = {
+        make: "Apple",
+        model: "Macbook Air M2",
+        ram: "8gb",
+        storage: "128gb",
+        processor: "M2 processor",
+        price: 100000,
+        display: "13 in",
+        displayInfo: function getInfo() {
+          console.log(
+            `${this.make}\n${this.model}\n${this.ram}\n${this.storage}\n${this.processor}\n${this.display}\n${this.price}`
+          );
+        },
+      };
+
+      obj5.displayInfo();
+    </script>
+  </body>
+</html>
