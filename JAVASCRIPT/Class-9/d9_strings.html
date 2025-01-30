@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String</title>
+  </head>
+  <body>
+    <!-- 
+        String
+
+        It is  a collection of characters (alphbets,symbols,numbers)
+        It is denoted by '' or " "
+
+        123456 -> number
+        "123456" -> String
+
+        Creating string:
+
+        1. Literal method
+        2. Creating an instance
+
+        Just like an array string also has numeric indexing which starts from zero
+
+        A  T  H  A  R  V  A
+        0  1  2  3  4  5  6
+
+        Methods of string
+
+        1. length: It gives us the no of characters in the String
+
+        2. slice(starting index, last index): It extyracts a portion of string from the
+                                     strating index to the last index (excluding the last index)
+
+        3. substring(starting index, last index): It works just like slice but ignores negative index
+
+        4. substr(starting index,no_of_elements): It works just like substring but it doesn't allow negative index
+
+        5. toUppercase(): Converts the string to capital letters
+
+        6. toLowercase(): Converts the string to small letters
+
+        7. concat(): Joins togther the given strings
+
+        8. indexOf(charcter): It gives us the first found index position of given character. It is case sensitive. 
+                            Returns -1 if the character is not available
+
+        9. lastIndexOf(character):It gives us the last found index position of given character. It is case sensitive. 
+                            Returns -1 if the character is not available
+
+        10. charAt(index_position): It returns the character available at that index position. 
+                            Returns empty if the index position is not found
+        11. charCodeAt(index_position): It returns the ASCII code of character available at that index position. 
+                            Returns NaN if the index position is not found
+
+        12. split(character): It divides the string from the given character
+
+        13. trim(): It removes the whitespace from the starting or ending of the string
+                trimStart(): Removes white space from beginning
+                trimEnd(): Removes whitespace from the end
+        14. includes(charcter/string): It returns true or false depending upon the availability of the character/string in our string.
+                            It is case sensitive
+        
+        15. replace(charcter to find, replacement character): It replaces the first found instance of the character to find with the replacement character
+
+        16. pad(): It modifies the length of the string to given length by adding some character to start or end
+                    padStart(new_length,character): Adds the character at the start to match the new length
+                    padEnd(new_length,character): Adds the character at the end to match the new length
+
+
+        Immutability of string: To make string immutable, we can decalre it as const. 
+                                It will make impossible for anyone to redeclare the string or inassign any value to it
+    -->
+    <script>
+      // Creating string
+
+      //   Literal method
+
+      let str = "Atharva";
+      console.log(str); //Atharva
+      console.log(typeof str); //string
+
+      //   Creating instance
+      let str1 = new String("Sairaj");
+      console.log(str1); //Sairaj
+      console.log(typeof str1); //Object
+      str1 = new String("Bhushan");
+      console.log(str1);
+
+      let str2 = "  Javascript  ";
+      let str5 = "Javascript";
+      let str3 = "Javascript/is/interesting/I/love/it";
+      let str4 = "Frontend Web Developer";
+      str2 = "ReactJS";
+      //   Developer Web Frontend
+      let strsmall = "smallcase";
+      let strupper = "UPPERCASE";
+      /*
+            J A V A S C R I P T
+            0 1 2 3 4 5 6 7 8 9
+    */
+      console.log("*******************");
+      console.log(str.length);
+      console.log("*******************");
+      console.log(str2.slice(2, 6)); //vasc
+      console.log(str2.slice(-6, -2)); //scri
+      console.log("*******************");
+      console.log(str2.substring(2, 6)); //vasc
+      console.log(str2.substring(-6, -2)); //Empty
+      console.log("*******************");
+      console.log(str2.substr(1, 5)); //avasc
+      console.log(str2.substr(6, 2)); //ri
+      console.log("*******************");
+      console.log(strsmall.toUpperCase());
+      console.log(strupper.toLowerCase());
+      console.log("*******************");
+      console.log(strsmall.concat(strupper));
+      console.log(strsmall + strupper);
+      console.log(`${strsmall}${strupper}`);
+      console.log("*******************");
+      console.log(str.indexOf("A")); //0
+      console.log(str.indexOf("a")); //3
+      console.log(str.indexOf("x")); //-1
+      console.log("*******************");
+      console.log(str.lastIndexOf("a")); //6
+      console.log(str.lastIndexOf("A")); //0
+      console.log("*******************");
+      console.log(str2.charAt(5)); //c
+      console.log(str2.charAt(12)); //empty
+      console.log("*******************");
+      console.log(str2.charCodeAt(4)); //115
+      console.log(str2.charCodeAt(0)); //74
+      console.log(str2.charCodeAt(14)); //NaN
+      console.log("*******************");
+      console.log(str3.split("/"));
+      console.log(str2.split(""));
+      console.log("*******************");
+      console.log(str4.split(" ").reverse().join(" "));
+      console.log("*******************");
+      console.log(str2 === str5); //false
+      let str6 = str2.trim();
+      console.log(str6);
+      //   console.log(str6 === str5); //false
+      console.log(str2.trimStart());
+      console.log(str2.trimEnd());
+      console.log("*******************");
+      console.log(str4.includes("e"));
+      console.log(str4.includes("Web"));
+      console.log("*******************");
+      console.log(str4.replace("Web", "UI"));
+      console.log(str2.replace("a", "A"));
+      console.log("*******************");
+      console.log(str5.padStart(15, "#"));
+      console.log(str5.padEnd(15, "#"));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        Arrays
+
+        It is a non primitive datatype
+        It is used to storre similar or dissimilar types of data
+        In an array we store or retrieve data using numerical indexing
+
+        [10,20,30,40,50]
+         0   1  2  3  4
+
+
+         Creating an array:
+
+         1. Literal method
+
+         2. Creating an instance
+
+
+        Array methods:
+
+        array_name.length: It returns the no of elements in the array
+
+        array_name.push(element): It inserts an element to the end of array and 
+                         return the length of modified array
+        array_name.pop(): It removes the last element from the array and
+                        returns the removed element
+        array_name.unshift(element): It inserts the given element to the start of the array and
+                             return the length of modified array
+        array_name.shift(): It removes the first element from the array and returns the 
+                            removed element
+        array_name.splice(): It removes the elements from anywhere in the 
+                            middle of array as per requirement and it returns the removed elements
+
+                arr.splice(starting_index ,no_of_elements): It removes the given no of 
+                                    elements starting from the given starting index
+                arr.splice(starting_index, no_of_elements, elements_to_be_added):
+                                    The removed elements are replaced with new elements
+                arr.splice(starting_index, 0, elements_to_be_added):
+                                    No elements are removed but new elements get
+                                    added to the array at given index position
+        
+        array_name.indexOf(element): It returns the index position of element where it is first found
+
+        array_name.lastIndexOf(element): It returns the last found index position of the element
+
+
+    
+    -->
+    <script>
+      // Literal method
+
+      //   let arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      //   let arr2 = [
+      //     "Sairaj",
+      //     "Atharva",
+      //     "Tushar",
+      //     "Suyash",
+      //     "Sakshi",
+      //     "Pranav",
+      //     "Jaydeep",
+      //     "Ajit",
+      //     "Tejaswi",
+      //     "Kimaya",
+      //   ];
+      //   var a; //undefined
+
+      //   let obj1 = {
+      //     id: 1,
+      //     role: "Developer",
+      //   };
+      //   let arr3 = [101, "Samsung", true, a, ["A", "B", "C", "D"], obj1];
+
+      //   console.log(arr3);
+
+      //   Creating an instance
+
+      //   let arr4 = new Array();
+
+      //Storing data in array
+      //   Index starts from 0
+      //   arr4[0] = "Rutvij";
+      //   arr4[1] = "Pratik";
+      //   arr4[2] = "Gaurav";
+      //   arr4[3] = "Ashwin";
+
+      //   console.log(arr4);
+
+      //   Inserting data into array using for loop
+      //   let arr1 = new Array();
+
+      //   for (let i = 0; i < 5; i++) {
+      //     arr1[i] = prompt("Enter data to be stored in array");
+      //   }
+      //   console.log(arr1);
+
+      //   Iterating the array using normal for loop
+
+      //   for (let i = 0; i < arr1.length; i++) {
+      //     console.log(arr1[i]);
+      //   }
+
+      //   //   Iterating the array using for of loop
+
+      //   for (let val of arr1) {
+      //     console.log(val);
+      //   }
+
+      //   ITerating the array using for in loop
+      //   for (let values in arr1) {
+      //     console.log(`${values}: ${arr1[values]}`);
+      //   }
+
+      //   arr1[3] = "SAIRAJ";
+      //   console.log("*******************");
+      //   for (let values in arr1) {
+      //     console.log(`${values}: ${arr1[values]}`);
+      //   }
+
+      //   ************************************************
+
+      //   Array methods
+      let arr1 = [
+        "Tushar",
+        "Jaydeep",
+        "Atharva",
+        "Sairaj",
+        "Pranav",
+        "Atharva",
+        "Ajit",
+      ];
+      console.log(arr1);
+
+      //   arr.length
+      console.log(arr1.length); //6
+
+      console.log("Last index position is " + (arr1.length - 1));
+
+      //   arr.push
+
+      console.log(arr1.push("Kimaya")); //7
+      console.log(arr1);
+
+      //   arr.pop
+
+      console.log(arr1.pop()); //Kimaya
+      console.log(arr1);
+
+      //   arr.unshift
+      console.log(arr1.unshift("Suyash"));
+      console.log(arr1);
+
+      //   arr.shift
+      console.log(arr1.shift());
+      console.log(arr1);
+
+      //   arr.splice
+
+      //   arr1.splice(1, 2);
+      //   console.log(arr1.splice(1, 2, "Tejaswi", "Kalyani"));
+      arr1.splice(1, 0, "Tejaswi", "Kalyani");
+      console.log(arr1);
+
+      //   arr.indexOf
+      console.log(arr1.indexOf("Atharva")); //4
+      console.log(arr1.indexOf("Ajay")); //Returns -1 because the element is not there
+
+      console.log(arr1.lastIndexOf("Atharva"));
+      console.log(arr1.indexOf("Ajay")); //Returns -1 because the element is not there
+    </script>
+  </body>
+</html>
