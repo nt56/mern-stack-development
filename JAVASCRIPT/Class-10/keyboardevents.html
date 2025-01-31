@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #d1 {
+        width: 100%;
+        height: 450px;
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body onkeypress="keyPress()" onkeyup="keyUp()" onkeydown="keyDown()">
+    <!-- 
+        Keyboard events
+
+        We have two types of keys on keyboard
+
+        The types are:
+
+        Printable keys: The keys which display some character on the screen(All letters, space)
+        Non-printable keys: The keys which do not display any character on the screen(Ctrl, Alt, Escape)
+
+        1. onkeypress: It is called when any printable key is pressed
+
+        2. onkeydown: It is called when any non-printable key is pressed
+
+        3. onkeyup: It is called when any key(printable/non-printable) in unpressed 
+    
+    
+    -->
+    <div id="d1">
+      <h1 id="message"></h1>
+    </div>
+    <script>
+      function keyPress() {
+        document.getElementById("message").innerHTML =
+          "A printable key is pressed";
+        document.getElementById("d1").style.backgroundColor = "lightskyblue";
+      }
+      function keyUp() {
+        document.getElementById("message").innerHTML =
+          "The keyboard key is unpressed";
+        document.getElementById("d1").style.backgroundColor = "orange";
+      }
+      function keyDown() {
+        document.getElementById("message").innerHTML =
+          "A non-printable key is pressed!";
+        document.getElementById("d1").style.backgroundColor = "lightgreen";
+      }
+    </script>
+  </body>
+</html>

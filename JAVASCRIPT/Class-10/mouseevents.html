@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+    <style>
+      #d1 {
+        width: 100%;
+        height: 350px;
+        border: 2px solid black;
+      }
+      #cdiv {
+        width: 150px;
+        height: 150px;
+        border: 2px solid red;
+        position: relative;
+        top: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        Events
+
+        When some kind of action is performed, it is called an event. 
+        In javascript we can respond to these events using the below 
+        mentioned event types:
+
+        1. Mouse
+        2. Keyboard 
+        3. Window
+        4. Form
+
+
+        Mouse:
+        We use prefix 'on'
+
+        1. onclick: It is called when the left mouse button is clicked
+
+        2. ondbclick: It is called when the left mouse button is clicked twice
+
+        3. oncontextmenu: It is called when the right mouse button is clicked
+
+        4. onmouseover: It is called when the mouse pointer enters the element 
+                        area or the child element area
+        
+        5. onmouseout: It is called when the mouse pointer exits the 
+                        element area or the child element area
+        
+        6. onmousedown: It is called when the left mouse button is pressed down
+
+        7. onmouseup: It is called when the left mouse button is unclicked
+
+        8. onmousewheel: It is called when the scroll wheel of mouse is activated
+
+
+    
+    
+    -->
+    <!-- onclick="sclick()" -->
+    <div
+      id="d1"
+      ondblclick="dbclick()"
+      oncontextmenu="rclick()"
+      onmouseover="mouseOver()"
+      onmouseout="mouseOut()"
+      onmousedown="mouseDown()"
+      onmouseup="mouseUp()"
+      onmousewheel="mouseWheel()"
+    >
+      <div id="cdiv"></div>
+      <h1 id="message"></h1>
+    </div>
+    <script>
+      // onclick
+      function sclick() {
+        document.getElementById("message").innerHTML =
+          "Mouse left button is clicked once";
+        document.getElementById("d1").style.backgroundColor = "red";
+      }
+      function dbclick() {
+        document.getElementById("message").innerHTML =
+          "Mouse left key is clicked twice.";
+        document.getElementById("d1").style.backgroundColor = "blue";
+      }
+      function rclick() {
+        document.getElementById("message").innerHTML =
+          "Mouse Right key is pressed";
+        document.getElementById("d1").style.backgroundColor = "green";
+      }
+      function mouseOver() {
+        document.getElementById("message").innerHTML =
+          "Mouse pointer has entered the element area or child element area";
+        document.getElementById("d1").style.backgroundColor = "yellow";
+      }
+      function mouseOut() {
+        document.getElementById("message").innerHTML =
+          "Mouse pointer has left the element area or the child element area";
+        document.getElementById("d1").style.backgroundColor = "purple";
+      }
+      function mouseDown() {
+        document.getElementById("message").innerHTML =
+          "Mouse left button is pressed in";
+        document.getElementById("d1").style.backgroundColor = "lightyellow";
+      }
+      function mouseUp() {
+        document.getElementById("message").innerHTML =
+          "The left mouse button is left";
+        document.getElementById("d1").style.backgroundColor = "lightskyblue";
+      }
+      function mouseWheel() {
+        document.getElementById("message").innerHTML =
+          "The scrolling wheel is rotated";
+        document.getElementById("d1").style.backgroundColor = "darkorange";
+      }
+    </script>
+  </body>
+</html>
