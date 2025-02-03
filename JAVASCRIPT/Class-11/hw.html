@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class-11</title>
+    <link rel="stylesheet" href="hw.css">
+</head>
+<body>
+    <form>
+        <label for="name" id="labelName">Name:</label>
+        <input type="text" id="name" name="name" onblur="handleNameBlur()" onfocus="handleNameFocus()"><br><br>
+        
+        <label for="email" id="labelEmail">Email:</label>
+        <input type="email" id="email" name="email" onblur="handleEmailBlur()" onfocus="handleEmailFocus()"><br><br>
+        
+        <label for="mobile" id="labelMobile">Mobile:</label>
+        <input type="tel" id="mobile" name="mobile" onblur="handlePhoneBlur()" onfocus="handlePhoneFocus()"><br><br>
+        
+        <label for="address" id="labelAddress">Address:</label>
+        <textarea id="address" name="address" onblur="handleAddressBlur()" onfocus="handleAddressFocus()"></textarea><br><br>
+        
+        <input type="submit" value="Submit" onclick="handleSubmit(event)">
+    </form>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- <tr id="tableRow">
+                <td id="data-1"></td>
+                <td id="data-2"></td>
+                <td id="data-3"></td>
+                <td id="data-4"></td>
+            </tr> -->
+        </tbody>
+    </table>
+
+    <script src="hw.js"></script>
+</body>
+</html>
+
