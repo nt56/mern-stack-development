@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        Form events
+
+        These are the events which help us in interacting with the inputs and form elements
+
+        onfocus: This event occurs when the focus is taken to the input or the input is selected
+
+        onblur: This event occurs when when we lose focus or deselect the input
+
+        onchange: This event occurs when the data in the input field has been changed
+
+        onselect: This event occurs when we select the data in some input field. Doesn't work on labels or titles
+
+        onsubmit: This event get occured when we try to submit the form
+    
+    -->
+    <form onsubmit="return confirm(`Are you sure?`)">
+      <label id="nameLabel" style="display: none">Enter name</label>
+      <input
+        type="text"
+        onfocus="showLabel()"
+        onblur="hideLabel()"
+        onchange="console.log('The data has been changed')"
+        onselect="alert(`You can't select data like this`)"
+      />
+      <input type="submit" />
+    </form>
+    <script>
+      function showLabel() {
+        document.getElementById("nameLabel").style.display = "inline";
+      }
+      function hideLabel() {
+        document.getElementById("nameLabel").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
