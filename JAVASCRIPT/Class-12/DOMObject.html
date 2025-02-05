@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Object</title>
+  </head>
+  <body>
+    <!-- 
+        DOM
+
+        DOM Stands for Document Object Model
+        It is a objet representation of our HTML page for Javascript
+        It is useful for iterating and interacting with the HTML elements through Javascript
+
+
+        Methods for accessing elements using DOM
+
+        getElementByID: This method is used to locate the element having given id.
+        getElemenetsByClassName: This method returns an array of all element using the given class.
+        getElementsByTagName: This method returns an array of all elements of given tag
+        getElementsByName: This method returns an array of all elements having same name
+
+        Additional methods for accessing HTML elements
+
+        querySelector(#id, .class, tagName, Name): It returns first occurence of the element matching the given id/class/tagName/name
+
+        querySelectorAll(#id, .class, tagName, Name): It returns the array of all the elements matching the given id/class/tagName/name
+
+
+
+    
+    -->
+    <div id="d1">
+      <h1 id="title">Hello Everyone!</h1>
+      <!-- <h1 id="title1">This is duplicate!</h1> -->
+    </div>
+
+    <p class="demoText">This is sample text 1</p>
+    <p class="demoText" name="demo">This is sample text 2</p>
+    <p class="demoText">This is sample text 3</p>
+    <p class="demoText" name="demo">This is sample text 4</p>
+    <p class="demoText">This is sample text 5</p>
+    <p class="demoText" name="demo">This is sample text 6</p>
+    <hr />
+    <input type="radio" name="radButton" class="radio" value="option1" /><label
+      >Option 1</label
+    >
+    <input type="radio" name="radButton" class="radio" value="option2" /><label
+      >Option 2</label
+    >
+    <input type="radio" name="radButton" class="radio" value="option3" /><label
+      >Option 3</label
+    >
+    <input type="radio" name="radButton" class="radio" value="option4" /><label
+      >Option 4</label
+    >
+    <script>
+      console.log(document);
+      console.log("******************");
+      console.log(document.getElementById("title").innerHTML);
+      console.log("******************");
+      let elements = document.getElementsByClassName("demoText");
+      console.log(elements);
+      for (let val of elements) {
+        console.log(val.innerHTML);
+      }
+      console.log("******************");
+      let tagElements = document.getElementsByTagName("p");
+      console.log(tagElements);
+      for (let ele of tagElements) {
+        console.log(ele.innerHTML);
+      }
+      console.log("******************");
+      let nameElements = document.getElementsByName("demo");
+      console.log(nameElements);
+      for (let ele of nameElements) {
+        console.log(ele.innerHTML);
+      }
+      console.log("******************");
+      let ele1 = document.querySelector("#title");
+      console.log(ele1.innerHTML); //Hello Everyone!
+      console.log(document.querySelector(".demoText"));
+      console.log("******************");
+      console.log(document.querySelectorAll(".demoText"));
+      console.log("******************");
+      let radEle = document.querySelectorAll(".radio");
+      console.log(radEle);
+      for (let ele of radEle) {
+        console.log(ele.value);
+      }
+    </script>
+  </body>
+</html>

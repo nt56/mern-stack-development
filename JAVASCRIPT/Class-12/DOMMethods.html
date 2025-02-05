@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .parademo1 {
+        font-size: 15px;
+      }
+
+      .parademo2 {
+        background-color: lightyellow;
+      }
+      .parademo3 {
+        border: 3px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        DOM methods for working with elements:
+
+        innerHTML: It can be used to read the HTML content in the element and also for 
+                   reading the HTML content from the element.
+        innerText: IT can be used to read the text content only. It ignores the 
+                   HTML tags and displays only the text content.
+        outerHTML: It can be used to read the HTML content of the element along with the element itself
+        outerText: When this method is used for reading the content, it works exactly like innerText.
+                   But when we set the content using this method, the HTML tags are ignored and also 
+                the containing element becomes normal text.
+        textContent: It returns the text content inside the given element while 
+                    maintaining the indentation and hiding the HTML tags
+
+        classList: It returns an array of all the classes that are applied to given element
+
+                add(Class): It adds the given class to the element
+
+                remove(Class): It removes the given class from the element
+
+                toggle(Class): It toggles the given class from the element
+
+        
+        getAttribute: It returns the value for given attribute of specific element
+
+        setAttribute: It is used to set the values of the given attribute
+
+        createChild:
+            createElement: It creates a new element based on the input we give
+
+        appendChild: It adds the given element as a child to specified element
+            
+
+    
+    -->
+    <div id="div1" style="border: 2px solid red">
+      <h1 id="title1">This is sample title</h1>
+      <p id="para1" class="parademo1 parademo2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore ducimus
+        magni, veniam ea ut necessitatibus reprehenderit repudiandae mollitia
+        eligendi maiores?
+      </p>
+    </div>
+    <button onclick="addClass()">Add Class</button
+    ><button onclick="removeClass()">Remove Class</button
+    ><button onclick="toggleClass()">Toggle Class</button>
+    <button onclick="getAttr()">Get Attributes on console</button>
+    <button onclick="setAttr()">Set Attributes</button>
+    <button onclick="createNewElement()">Create Element</button>
+    <script>
+      //   document.getElementById("title1").innerHTML = "This is modified text";
+      console.log(document.getElementById("div1").innerHTML);
+      console.log(document.getElementById("div1").innerText);
+      //   document.getElementById(
+      //     "div1"
+      //   ).innerText = `<h1>This is changed Content</h1>`;
+      console.log(document.getElementById("div1").outerHTML);
+      //   console.log(document.getElementById("div1").outerText);
+      //   document.getElementById(
+      //     "div1"
+      //   ).outerText = `<h1>This is the changed content</h1>`;
+
+      console.log(document.getElementById("div1").textContent);
+      console.log("********************");
+      console.log(document.getElementById("para1").classList);
+      console.log("********************");
+      function getAttr() {
+        console.log(document.getElementById("div1").getAttribute("style"));
+      }
+      function setAttr() {
+        document
+          .getElementById("div1")
+          .setAttribute("style", "background-color: orange");
+      }
+
+      function addClass() {
+        document.getElementById("para1").classList.add("parademo3");
+        console.log("Class added");
+      }
+      function removeClass() {
+        document.getElementById("para1").classList.remove("parademo3");
+        console.log("Class removed");
+      }
+      function toggleClass() {
+        document.getElementById("para1").classList.toggle("parademo3");
+        console.log("Class Toggled");
+      }
+      function createNewElement() {
+        let tag = prompt("Enter the name of tag");
+        let cont = prompt("Enter the content to print in tag");
+
+        let tag1 = document.createElement(tag);
+        tag1.innerHTML = cont;
+        // document.body.appendChild(tag1);
+        document.getElementById("div1").appendChild(tag1);
+      }
+    </script>
+  </body>
+</html>
