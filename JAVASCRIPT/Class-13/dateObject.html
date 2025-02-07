@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+    
+    
+    Date
+    
+    It returns the current date and time
+
+    It has some predefined functions which help us in fetching the required date and time
+    
+    -->
+    <script>
+      let todayDate = new Date();
+      console.log(todayDate);
+
+      console.log(todayDate.getDate());
+      console.log(todayDate.getDay());
+      console.log(todayDate.getMonth());
+      console.log(todayDate.getFullYear());
+
+      //   Setting date using construtor
+
+      //   let customDate = new Date("1997 Sep 3, 13:29:00");
+
+      //   Setting individual date
+      let customDate = new Date();
+      customDate.setDate(3);
+      customDate.setMonth(8);
+      customDate.setFullYear(1997);
+      console.log(customDate);
+
+      console.log(todayDate.toLocaleDateString());
+      console.log(todayDate.toLocaleTimeString());
+      console.log(todayDate.toLocaleString());
+
+      let montharr = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+
+      console.log(
+        `${todayDate.getDate()} ${
+          montharr[todayDate.getMonth()]
+        } ${todayDate.getFullYear()}`
+      );
+
+      console.log(
+        `${todayDate.getHours()}: ${todayDate.getMinutes()}:${todayDate.getSeconds()}`
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        Math Object
+
+
+        It is an object of javascript which gives some mathematical functions
+    
+    -->
+    <script>
+      console.log(Math);
+      console.log(Math.min(10, 4, 12, 56, 23, 34, 66, 98, 1, 45, 22, 46));
+      console.log(Math.max(10, 4, 12, 56, 23, 34, 66, 98, 1, 45, 22, 46));
+
+      let numarr = [12, 45, 76, 34, 88, 7, 68, 81, 101];
+      console.log(Math.min(numarr)); //NaN
+
+      /* Spread operator
+
+
+            function demo(num1,num2, ...restpara){
+
+            }
+
+
+            It is Modern JS ES6 feature
+            It is used to extract, concat or replace values from an array
+            It is represented by '...'
+
+      */
+
+      console.log(Math.min(...numarr));
+      console.log(Math.max(...numarr));
+
+      //   rounded
+
+      console.log(Math.round(12.11)); //<0.5    gets rounded to previous integer
+      console.log(Math.round(31.66)); //>0.5    gets rounded to the next integer
+
+      //floor and ceil
+      /*
+      floor: Rounds up the decimal to nearest small integer
+
+      ceil: Rounds up the decimal to nearest large integer
+      */
+
+      console.log(Math.floor(15.99)); //15
+      console.log(Math.ceil(21.01)); //22
+      console.log(Math.floor(-12.34)); //-13
+      console.log(Math.ceil(-12.34)); //-12
+
+      /*
+      truncate:
+
+
+      trunc: It removes the decimal value and returns only the integer part
+      */
+
+      console.log(Math.trunc(34.56)); //34
+      console.log(Math.trunc(34.12)); //34
+
+      /*   random
+
+            It returns a random number between 0 and 1
+    */
+
+      console.log(Math.random());
+      console.log(Math.trunc(Math.random() * 10) + 1);
+
+      /*
+        sqrt: This is used to get the square root
+
+        cbrt: It is used to get the cube roots
+
+        pow: It gives us the values of a number raised to given power
+
+      */
+
+      console.log(Math.sqrt(64));
+      console.log(Math.sqrt(25));
+      console.log(Math.sqrt(45));
+
+      console.log(Math.cbrt(27));
+      console.log(Math.cbrt(125));
+      console.log(Math.cbrt(123));
+
+      console.log(Math.pow(5, 3));
+      console.log(Math.pow(2, 6));
+    </script>
+  </body>
+</html>

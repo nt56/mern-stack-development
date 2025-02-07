@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        BOM
+
+
+        BOM stands for Browser Object Model
+        BOM helps us to interact with the browser
+
+        DOM->document
+        BOM->window
+
+
+        window object:
+
+        window object is a global scope
+        Apart from window 'this' keyword is also a global object.
+
+
+        window
+          |
+        document
+
+        Basic methods of BOM:
+
+        alert
+        prompt 
+        confirm
+
+        More methods of window
+
+        methods of history: history object helps us with navigating throught the history of pages on our browser
+
+        location: This object gives information about the url/path of our page
+
+        navigator: This object gives us information about the browser and the user environment
+
+        screen:
+    
+    -->
+    <button onclick="goBack()">Go back</button>
+    <button onclick="goForward()">Go forward</button>
+    <button onclick="goPages()">Go back 2 pages</button>
+    <button onclick="window.print()">Print Page</button>
+    <button
+      onclick="window.open('./d13_BOM2.html','chrome','width=400px height=300px')"
+    >
+      Open Google
+    </button>
+    <button onclick="window.close()">Close Window</button>
+    <script>
+      //   console.log(window);
+      //   window.alert("This is alert called with window object");
+      //   window.confirm("Are you sure?");
+      //   window.prompt("Enter your name");
+      /*   The above methods work just fine even if we don't use window explicitly
+            because window is a global object and it is present in our document
+            throughout the code
+    */
+
+      let history = window.history;
+      function goBack() {
+        history.back();
+      }
+
+      function goForward() {
+        history.forward();
+      }
+
+      function goPages() {
+        history.go(-2);
+      }
+      console.log(history);
+
+      let loc = window.location;
+      console.log(loc);
+      console.log(loc.pathname);
+      console.log(loc.host);
+      console.log(loc.hostname);
+      console.log(loc.port);
+      console.log(loc.protocol);
+
+      let nav = window.navigator;
+      console.log(nav);
+
+      let scr = window.screen;
+      console.log(screen);
+    </script>
+  </body>
+</html>
