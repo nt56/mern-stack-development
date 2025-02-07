@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="res"></h1>
+    <!-- 
+    
+        setTimeout: It is used to start the execution of function after certain given interval
+
+        syntax
+
+        setTimeout(handler/function, time_in_ms)
+    
+    -->
+    <script>
+      //   setTimeout(hello, 5000);
+
+      //   function hello() {
+      //     console.log("Hello!");
+      //   }
+
+      let num = 0;
+      setTimeout(() => {
+        console.log("setInterval starting ");
+        setInterval(() => {
+          num += 20;
+          document.getElementById("res").innerHTML = num;
+        }, 1500);
+      }, 3000);
+    </script>
+  </body>
+</html>

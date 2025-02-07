@@ -1,0 +1,13 @@
+#box{
+    background-color: #f1f1f1;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin: auto;
+    margin-top: 100px;
+    font-size: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+    font-weight: bolder;
+    width: 50%;
+}

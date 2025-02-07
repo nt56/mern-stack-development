@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="startCount()">Start</button>
+    <button onclick="stopCount()">Stop</button>
+    <h1 id="count">0</h1>
+    <!-- 
+        setInterval: It executes the given function repeatedly after certain interval
+
+        syntax
+
+        setInterval(handler/function, time_in_ms)
+    
+    
+    -->
+    <script>
+      var x;
+      let startCount = () => {
+        let ct = 0;
+        x = setInterval(() => {
+          ct++;
+          document.getElementById("count").innerHTML = ct;
+          console.log(ct);
+        }, 1000);
+      };
+
+      function stopCount() {
+        console.log("Count stopped");
+        clearInterval(x);
+      }
+      //   setInterval(hello, 2000);
+
+      //   function hello() {
+      //     console.log("Hello!");
+      //   }
+
+      //   setInterval(() => {
+      //     console.log("This is setInterval");
+      //   }, 1000);
+    </script>
+  </body>
+</html>
