@@ -1,0 +1,43 @@
+.stopwatch {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin-top: 200px;
+}
+
+.display {
+    font-size: 6em;
+    margin-bottom: 20px;
+}
+
+span {
+    display: inline-block;
+    width: 100px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.controls {
+    margin-top: 100px;
+}
+
+.controls button {
+    font-size: 4em;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.btn{
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 20px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
