@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 100px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.operation-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    font-size: 1.5rem;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-group button {
+    padding: 10px 20px;
+    border: none;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-group button:hover {
+    background-color: #0056b3;
+}
+
+.table-container {
+    width: 80%;
+    overflow-x: auto;
+    text-align: center;
+    padding: 10px;
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+.table-container th, td{
+    border: 1px solid black;
+    padding: 20px;
+    font-size: 1.5rem;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Form Calculator</title>
+    <link rel="stylesheet" href="task-1.css">
+</head>
+
+<body>
+    <div class="body-container">
+        <h1 class="heading">Basic Calculator</h1>
+
+        <div class="btns-container">
+            <button id="add-btn" type="button" onclick="add()">Addition</button>
+            <button id="sub-btn" type="button" onclick="sub()">Substraction</button>
+            <button id="mul-btn" type="button" onclick="mul()">Multiplication</button>
+            <button id="div-btn" type="button" onclick="div()">Division</button>
+            <button id="mod-btn" type="button" onclick="mod()">Mod</button>
+            <button id="rst-btn" type="button" onclick="reset()">Reset</button>
+        </div>
+
+        <form action="">
+            <label for="n-1">Enter 1<sup>st</sup> Number : </label>
+            <input type="number" id="n-1" name="number-1">
+
+            <label for="n-2">Enter 2<sup>nd</sup> Number : </label>
+            <input type="number" id="n-2" name="number-2">
+
+            <label for="operation">Operation : </label>
+            <input type="text" id="operation" name="operation">
+
+            <label for="ans">Answer : </label>
+            <input type="text" id="ans" name="answer">
+        </form>
+    </div>
+
+    <script src="task-1.js"></script>
+</body>
+
+</html>

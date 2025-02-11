@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operations</title>
+    <link rel="stylesheet" href="task-3.css">
+</head>
+<body>
+    <div class="operation-container">
+        <div class="input-group">
+            <label for="credit-amount">Enter amount to credit:</label>
+            <input type="number" id="credit-amount" name="credit-amount">
+        </div>
+        <div class="input-group">
+            <label for="debit-amount">Enter amount to debit:</label>
+            <input type="number" id="debit-amount" name="debit-amount">
+        </div>
+        <div class="input-group">
+            <label for="wallet">Wallet:</label>
+            <input type="number" id="wallet" name="wallet">
+        </div>
+        <div class="button-group">
+            <button id="credit-button" onclick="add()">Credit</button>
+            <button id="withdraw-button" onclick="withdraw()">Withdraw</button>
+        </div>
+    </div>
+    <div class="table-container">
+        <table id="op-table">
+                <tr>
+                    <th>SR. NO.</th>
+                    <th>Credit</th>
+                    <th>Debit</th>
+                    <th>Balance</th>
+                </tr>
+                <!-- <tr>
+                    <td>1</td>
+                    <td id="credit">00</td>
+                    <td id="debit">00</td>
+                    <td id="balance">00</td>
+                </tr> -->
+        </table>
+    </div>
+
+    <script src="task-3.js"></script>
+</body>
+</html>
