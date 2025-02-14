@@ -170,7 +170,7 @@ webpack:{
 Webpack not bundling public folder
 
 
-*********************************************************
+*******************************************************
 
 
 # Separate Installation
@@ -186,7 +186,6 @@ npm i webpack-cli --save
 npm i webpack --save
 npm i webpack -dev-server --save
 npm i webpack -cli --save
-
 
 
 
