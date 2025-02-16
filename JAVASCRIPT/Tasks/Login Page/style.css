@@ -1,0 +1,122 @@
+* {
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+
+    height: 100vh;
+    width: 100%;
+
+    background-image: linear-gradient(to right, aqua, purple);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.login_box {
+
+    height: 80%;
+    width: 350px;
+
+    background-color: white;
+
+    border-radius: 20px 0px 20px 0px;
+    /* box-shadow: 0px 0px 5px 3px red; */
+    padding: 30px;
+
+}
+
+.login_box h1 {
+
+    text-align: center;
+    font-size: 30px;
+
+    margin-bottom: 30px;
+}
+
+.login_box label{
+    font-weight: 500;
+    color:grey
+}
+
+.login_box input {
+
+    margin-top: 2px;
+    width:100%;
+    text-align: left;
+    padding:7px 0px;
+
+    border: none;
+    border-bottom: solid grey 1px;
+    
+
+}
+
+.login_box input:focus{
+    outline:none
+}
+
+.login_box a{
+    text-align: right;
+    color:grey;
+    text-decoration: none;
+}
+
+
+.login_box button{
+    margin-top: 30px;
+    width: 100%;
+    padding: 10px 0px;
+    background-image: linear-gradient(to right, aqua, purple);
+    cursor: pointer;
+    border:none;
+    color:white;
+    border-radius: 30px;
+    text-transform: uppercase;
+}
+
+.login_box .sign_up_title{
+    text-align: center;
+    margin: 30px 0px;
+    color:grey;
+}
+
+.login_box .social_box{
+    display: flex;
+    gap:23px;
+    text-align: center;
+    justify-content: center;
+}
+
+.social_box li{
+    list-style-type:none;
+}
+
+.social_box li i{
+    padding: 10px;
+    color:white;
+    border-radius: 50%;
+    background-color: blue;
+
+
+}
+
+
+.social_box li{
+    transition: all 0.3s ease;
+}
+
+.social_box li:hover{
+    transform: scale(0.8);
+}
+
+.login_box button{
+    transition: all 0.4s ease;
+}
+.login_box button:hover{
+    transform: translate(10px);
+}
