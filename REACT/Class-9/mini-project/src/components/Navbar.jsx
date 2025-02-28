@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const naviget = useNavigate();
+
   return (
     <div>
       <nav
@@ -61,11 +63,19 @@ const Navbar = () => {
 
           {/* Buttons */}
           <div className="d-flex gap-2">
-            <button className="btn btn-outline-light" type="submit">
-              Login
+            <button
+              onClick={() => naviget("/admin")}
+              className="btn btn-outline-light"
+              type="submit"
+            >
+              Admin
             </button>
-            <button className="btn btn-outline-light" type="submit">
-              Signup
+            <button
+              onClick={() => naviget("/cart")}
+              className="btn btn-outline-light"
+              type="submit"
+            >
+              Cart
             </button>
           </div>
         </div>

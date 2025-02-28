@@ -8,20 +8,45 @@ class Home extends React.Component {
     this.state = {
       food: true,
       electronics: true,
+      book: true,
       other: true,
     };
   }
 
   handleFoodProducts = () => {
-    this.setState({ food: true, electronics: false, other: false });
+    this.setState({
+      food: true,
+      electronics: false,
+      other: false,
+      book: false,
+    });
+  };
+
+  handleBookProducts = () => {
+    this.setState({
+      book: true,
+      electronics: false,
+      other: false,
+      food: false,
+    });
   };
 
   handleElectronicsProducts = () => {
-    this.setState({ food: false, electronics: true, other: false });
+    this.setState({
+      food: false,
+      electronics: true,
+      other: false,
+      book: false,
+    });
   };
 
   handleOtherProducts = () => {
-    this.setState({ food: false, electronics: false, other: true });
+    this.setState({
+      food: false,
+      electronics: false,
+      other: true,
+      book: false,
+    });
   };
 
   render() {
@@ -35,7 +60,7 @@ class Home extends React.Component {
       },
       {
         id: 2,
-        name: "Berger",
+        name: "Burger",
         img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/9/18/5e7991d9-6a0d-4034-82a9-59bd2bbdc0b3_43836.jpg",
         btn1: "Add",
         btn2: "Buy Now",
@@ -146,15 +171,81 @@ class Home extends React.Component {
       },
       {
         id: 4,
-        name: "Book",
-        img: "https://rukminim2.flixcart.com/image/612/612/xif0q/book/c/t/f/man-s-search-for-meaning-original-imah9bc2mvb8hnw6.jpeg?q=70",
+        name: "Sunglass",
+        img: "https://rukminim2.flixcart.com/image/612/612/xif0q/sunglass/j/q/x/p429gr3v-one-size-fits-all-fastrack-original-imagp3eusz94znhy.jpeg?q=70",
         btn1: "Add",
         btn2: "Buy Now",
       },
       {
         id: 5,
-        name: "Sunglass",
-        img: "https://rukminim2.flixcart.com/image/612/612/xif0q/sunglass/j/q/x/p429gr3v-one-size-fits-all-fastrack-original-imagp3eusz94znhy.jpeg?q=70",
+        name: "Bag",
+        img: "https://rukminim2.flixcart.com/image/612/612/xif0q/backpack/s/v/2/daily-use-tuition-bag-office-bag-college-backpack-men-women-original-imah8ua7ch3w9k6p.jpeg?q=70",
+        btn1: "Add",
+        btn2: "Buy Now",
+      },
+      {
+        id: 6,
+        name: "Mouse",
+        img: "https://rukminim2.flixcart.com/image/612/612/xif0q/mouse/s/r/f/-original-imagxxghtn7grgyz.jpeg?q=70",
+        btn1: "Add",
+        btn2: "Buy Now",
+      },
+      {
+        id: 7,
+        name: "Mobile",
+        img: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/g/s/r/105-single-sim-keypad-mobile-phone-with-wireless-fm-radio-ta-original-imah53fqhhqyadgd.jpeg?q=70",
+        btn1: "Add",
+        btn2: "Buy Now",
+      },
+    ];
+
+    const bookProducts = [
+      {
+        id: 1,
+        name: "Ikigai",
+        img: "https://rukminim2.flixcart.com/image/612/612/xif0q/book/a/d/4/ikigai-japanese-art-of-staying-young-while-growing-old-original-imah5p39tykbnshp.jpeg?q=70",
+        btn1: "Add",
+        btn2: "Buy Now",
+      },
+      {
+        id: 2,
+        name: "Subtle art Of Not Giving",
+        img: "https://rukminim2.flixcart.com/image/612/612/xif0q/book/3/d/c/the-subtle-art-of-not-giving-a-f-ck-original-imah93mvkd4fsknk.jpeg?q=70",
+        btn1: "Add",
+        btn2: "Buy Now",
+      },
+      {
+        id: 3,
+        name: "Atomic Habits",
+        img: "https://rukminim2.flixcart.com/image/200/200/xif0q/icons/original-9782826700289_1.png",
+        btn1: "Add",
+        btn2: "Buy Now",
+      },
+      {
+        id: 4,
+        name: "How-to-win-friends-and-influence-people",
+        img: "https://rukminim2.flixcart.com/image/312/312/xif0q/book/g/4/e/how-to-win-friends-and-influence-people-original-imagh6apqn2wmwkk.jpeg?q=70&crop=false",
+        btn1: "Add",
+        btn2: "Buy Now",
+      },
+      {
+        id: 5,
+        name: "The-psychology-of-money",
+        img: "https://rukminim2.flixcart.com/image/312/312/xif0q/book/q/c/r/the-psychology-of-money-original-imah6kcfqawqsgtd.jpeg?q=70",
+        btn1: "Add",
+        btn2: "Buy Now",
+      },
+      {
+        id: 6,
+        name: "Can't-hurt-me",
+        img: "https://rukminim2.flixcart.com/image/312/312/xif0q/book/o/c/3/can-t-hurt-me-by-david-goggins-hardcover-english-edition-original-imah3kr7cq5n6mub.jpeg?q=70",
+        btn1: "Add",
+        btn2: "Buy Now",
+      },
+      {
+        id: 7,
+        name: "Man-s-search-for-meaning",
+        img: "https://rukminim2.flixcart.com/image/612/612/xif0q/book/c/t/f/man-s-search-for-meaning-original-imah9bc2mvb8hnw6.jpeg?q=70",
         btn1: "Add",
         btn2: "Buy Now",
       },
@@ -165,22 +256,32 @@ class Home extends React.Component {
         <div className="d-flex flex-column min-vh-100 container-fluid pb-5">
           <div className="d-flex justify-content-center gap-5 my-5">
             <button
-              className="btn btn-primary fw-bold"
+              className="shadow-lg btn btn-outline-warning fw-bold"
+              style={{ width: "200px" }}
               onClick={() => this.handleElectronicsProducts()}
             >
-              Electronic Products
+              Electronics
             </button>
             <button
-              className="btn btn-primary fw-bold"
+              style={{ width: "200px" }}
+              className="shadow-lg btn btn-outline-warning fw-bold"
               onClick={() => this.handleFoodProducts()}
             >
-              Food Products
+              Foods
             </button>
             <button
-              className="btn btn-primary fw-bold"
+              style={{ width: "200px" }}
+              className="shadow-lg btn btn-outline-warning fw-bold"
+              onClick={() => this.handleBookProducts()}
+            >
+              Books
+            </button>
+            <button
+              style={{ width: "200px" }}
+              className="shadow-lg btn btn-outline-warning fw-bold"
               onClick={() => this.handleOtherProducts()}
             >
-              Other Products
+              Others
             </button>
           </div>
 
@@ -198,6 +299,17 @@ class Home extends React.Component {
 
             {this.state.electronics &&
               electronicsProducts.map((p) => (
+                <Products
+                  key={p.id}
+                  name={p.name}
+                  photo={p.img}
+                  btn1={p.btn1}
+                  btn2={p.btn2}
+                />
+              ))}
+
+            {this.state.book &&
+              bookProducts.map((p) => (
                 <Products
                   key={p.id}
                   name={p.name}
