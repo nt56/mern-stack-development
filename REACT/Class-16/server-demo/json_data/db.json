@@ -1,0 +1,164 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "age": 28,
+      "city": "New York",
+      "phone": "123-456-7890"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "janesmith@example.com",
+      "age": 25,
+      "city": "Los Angeles",
+      "phone": "987-654-3210"
+    },
+    {
+      "id": 3,
+      "name": "Michael Johnson",
+      "email": "michaelj@example.com",
+      "age": 32,
+      "city": "Chicago",
+      "phone": "456-789-1230"
+    },
+    {
+      "id": 4,
+      "name": "Emily Davis",
+      "email": "emilyd@example.com",
+      "age": 29,
+      "city": "Houston",
+      "phone": "321-654-9870"
+    },
+    {
+      "id": 5,
+      "name": "David Wilson",
+      "email": "davidw@example.com",
+      "age": 35,
+      "city": "San Francisco",
+      "phone": "789-123-4560"
+    },
+    {
+      "id": 6,
+      "name": "Emma Brown",
+      "email": "emmab@example.com",
+      "age": 27,
+      "city": "Seattle",
+      "phone": "654-321-7890"
+    },
+    {
+      "id": 7,
+      "name": "James Anderson",
+      "email": "jamesa@example.com",
+      "age": 30,
+      "city": "Boston",
+      "phone": "987-123-6540"
+    },
+    {
+      "id": 8,
+      "name": "Olivia Martinez",
+      "email": "oliviam@example.com",
+      "age": 26,
+      "city": "Miami",
+      "phone": "123-789-4560"
+    },
+    {
+      "id": 9,
+      "name": "Daniel Thomas",
+      "email": "danielt@example.com",
+      "age": 31,
+      "city": "Denver",
+      "phone": "321-987-6540"
+    },
+    {
+      "id": 10,
+      "name": "Sophia Garcia",
+      "email": "sophiag@example.com",
+      "age": 24,
+      "city": "Austin",
+      "phone": "456-321-9870"
+    },
+    {
+      "id": 11,
+      "name": "Luffy",
+      "email": "luffy@example.com",
+      "age": 20,
+      "city": "japan",
+      "phone": "123-456-7890"
+    }
+  ],
+  "items" : [
+    {
+      "id": 1,
+      "name": "Laptop",
+      "category": "Electronics",
+      "price": 999.99,
+      "stock": 25
+    },
+    {
+      "id": 2,
+      "name": "Smartphone",
+      "category": "Electronics",
+      "price": 699.99,
+      "stock": 50
+    },
+    {
+      "id": 3,
+      "name": "Wireless Headphones",
+      "category": "Accessories",
+      "price": 129.99,
+      "stock": 100
+    },
+    {
+      "id": 4,
+      "name": "Gaming Mouse",
+      "category": "Accessories",
+      "price": 59.99,
+      "stock": 75
+    },
+    {
+      "id": 5,
+      "name": "Mechanical Keyboard",
+      "category": "Accessories",
+      "price": 89.99,
+      "stock": 40
+    },
+    {
+      "id": 6,
+      "name": "Smartwatch",
+      "category": "Wearables",
+      "price": 199.99,
+      "stock": 30
+    },
+    {
+      "id": 7,
+      "name": "Bluetooth Speaker",
+      "category": "Audio",
+      "price": 149.99,
+      "stock": 60
+    },
+    {
+      "id": 8,
+      "name": "External Hard Drive",
+      "category": "Storage",
+      "price": 79.99,
+      "stock": 45
+    },
+    {
+      "id": 9,
+      "name": "Tablet",
+      "category": "Electronics",
+      "price": 499.99,
+      "stock": 35
+    },
+    {
+      "id": 10,
+      "name": "Monitor",
+      "category": "Electronics",
+      "price": 299.99,
+      "stock": 20
+    }
+  ]
+}
