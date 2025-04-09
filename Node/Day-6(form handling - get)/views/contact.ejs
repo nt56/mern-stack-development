@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%-include('navbar.ejs')%>
+
+</head>
+
+<body>
+
+    <h1> Contact Us</h1>
+    <hr>
+
+    <form action="/saveform" method="GET" enctype="multipart/form-data">
+
+        <label for="">First Name</label>
+        <input type="text" placeholder="enter your first name" name="firstName" id="firstName">
+        <br><br>
+
+        <label for="">Last Name</label>
+        <input type="text" placeholder="enter your last name" name="lastName" id="lastName">
+        <br><br>
+
+        <label for="">Your Age</label>
+        <input type="text" placeholder="enter your age" name="age" id="age">
+        <br><br>
+
+        <label for="">Your Email</label>
+        <input type="email" name="email" id="email">
+        <br><br>
+
+        <label for="">Your password </label>
+        <input type="password" name="password" id="password">
+
+        <br>
+        <br>
+
+        <button>Save Form</button>
+
+    </form>
+</body>
+
+</html>

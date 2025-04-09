@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%-include("navbar.ejs")%>
+</head>
+<body>
+    <h1>Home</h1>
+    <hr>
+
+    <img src="sanji.jpg" alt="user-img" style="width: 400px;">
+
+    <h2>Name : <%= data[1].name%></h2>
+    <h2>Email : <%= data[1].email%></h2>
+    <h2>Age : <%= data[1].age%></h2>
+    <h2>Role : <%= data[1].role%></h2>
+    <h2>Role : <%= data[1].gender%></h2>
+</body>
+</html>
