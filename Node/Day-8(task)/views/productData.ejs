@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include("navbar.ejs")%>
+</head>
+<body>
+    <div class="container mt-5">
+        <h3 class="mb-4">Product Data Table</h3>
+        <hr>
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover align-middle">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Product Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Color</th>
+                <th scope="col">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><%- data.productName%></td>
+                <td><%- data.productCategory%></td>
+                <td>₹<%- data.productPrice%></td>
+                <td><%- data.productQuantity%></td>
+                <td><%- data.productBrand%></td>
+                <td><%- data.productColor%></div></td>
+                <td><%- data.productDescription%></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+</body>
+</html>
