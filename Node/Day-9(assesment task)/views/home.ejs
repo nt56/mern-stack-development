@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <%- include("navbar.ejs") %>
+</head>
+<style>
+  .form-container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .form-title {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+</style>
+<body>
+  <div class="container form-container my-5">
+    
+    <form method="post" action="/success" class="needs-validation">
+      <h2 class="mb-4 form-title fw-bold">Job Application Form</h2>
+    <hr>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" required />
+        <div class="invalid-feedback">Please enter a valid email.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="mobile" class="form-label">Mobile Number</label>
+        <input type="tel" class="form-control" id="mobile" name="mobile" pattern="^\d{10}$" required />
+        <div class="invalid-feedback">Please enter a valid 10-digit mobile number.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="role" class="form-label">Role</label>
+        <select class="form-select" id="role" name="role" required>
+          <option value="" disabled selected>Select role</option>
+          <option value="frontend">Frontend</option>
+          <option value="backend">Backend</option>
+          <option value="fullstack">Full Stack</option>
+        </select>
+        <div class="invalid-feedback">Please select a role.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="vacancy" class="form-label">Number of Vacancies</label>
+        <input type="number" class="form-control" id="vacancy" name="vacancy" min="1" required />
+        <div class="invalid-feedback">Please enter a valid number of vacancies.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="ctc" class="form-label">Offer CTC (in LPA)</label>
+        <input type="number" class="form-control" id="ctc" name="ctc" min="0" step="0.1" required />
+        <div class="invalid-feedback">Please enter a valid CTC.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="skills" class="form-label">Skills (Comma-separated)</label>
+        <input type="text" class="form-control" id="skills" name="skills" pattern="^[\w\s,]+$" required />
+        <div class="invalid-feedback">Please enter skills separated by commas.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="experience" class="form-label">Relevant Experience (in Years)</label>
+        <input type="number" class="form-control" id="experience" name="experience" min="0" step="0.1" required />
+        <div class="invalid-feedback">Please enter relevant experience.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="address" class="form-label">Address</label>
+        <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+        <div class="invalid-feedback">Please enter your address.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="interviewDate" class="form-label">Availability for Interview</label>
+        <input type="date" class="form-control" id="interviewDate" name="interviewDate" required />
+        <div class="invalid-feedback">Please select a date.</div>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
