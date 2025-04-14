@@ -14,7 +14,7 @@ This repository is designed to:
 
 ## Technologies Covered
 
-- **MongoDB**: Database management and CRUD operations.
+- **MongoDB/SQL**: Database management and CRUD operations.
 - **Express.js**: Backend framework for building APIs.
 - **React.js**: Frontend library for building user interfaces.
 - **Node.js**: JavaScript runtime for backend development.
