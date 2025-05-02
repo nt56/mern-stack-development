@@ -1,0 +1,541 @@
+Microsoft Windows [Version 10.0.19045.5737]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\admin>mysql -u root -p -P 3307
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 22
+Server version: 10.4.32-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| auth               |
+| batch_management   |
+| ci_database        |
+| information_schema |
+| mysql              |
+| node_js_10am_apr   |
+| nodejs_10am        |
+| nodejs_23          |
+| nodejs_nov         |
+| performance_schema |
+| phpmyadmin         |
+| sales_crm          |
+| sample             |
+| sample2            |
+| sample_db_1        |
+| sample_db_10am     |
+| test               |
++--------------------+
+17 rows in set (0.003 sec)
+
+MariaDB [(none)]> use node_js_10am_apr
+Database changed
+MariaDB [node_js_10am_apr]> show tables;
++----------------------------+
+| Tables_in_node_js_10am_apr |
++----------------------------+
+| emp                        |
+| students                   |
+| user                       |
++----------------------------+
+3 rows in set (0.009 sec)
+
+MariaDB [node_js_10am_apr]>
+MariaDB [node_js_10am_apr]> Create table product(
+    ->     p_id INT PRIMARY KEY AUTO_INCREMENT,
+    ->     p_name varchar(200),
+    ->     p_category varchar(200),
+    ->     p_price int,
+    ->     p_qty int,
+    ->     p_brand VARCHAR(100),
+    ->     p_offer_price VARCHAR(100),
+    ->     p_details TEXT
+    -> );
+Query OK, 0 rows affected (0.017 sec)
+
+MariaDB [node_js_10am_apr]> show tables;
++----------------------------+
+| Tables_in_node_js_10am_apr |
++----------------------------+
+| emp                        |
+| product                    |
+| students                   |
+| user                       |
++----------------------------+
+4 rows in set (0.001 sec)
+
+MariaDB [node_js_10am_apr]> describe products;
+ERROR 1146 (42S02): Table 'node_js_10am_apr.products' doesn't exist
+MariaDB [node_js_10am_apr]> describe product;
++---------------+--------------+------+-----+---------+----------------+
+| Field         | Type         | Null | Key | Default | Extra          |
++---------------+--------------+------+-----+---------+----------------+
+| p_id          | int(11)      | NO   | PRI | NULL    | auto_increment |
+| p_name        | varchar(200) | YES  |     | NULL    |                |
+| p_category    | varchar(200) | YES  |     | NULL    |                |
+| p_price       | int(11)      | YES  |     | NULL    |                |
+| p_qty         | int(11)      | YES  |     | NULL    |                |
+| p_brand       | varchar(100) | YES  |     | NULL    |                |
+| p_offer_price | varchar(100) | YES  |     | NULL    |                |
+| p_details     | text         | YES  |     | NULL    |                |
++---------------+--------------+------+-----+---------+----------------+
+8 rows in set (0.024 sec)
+
+MariaDB [node_js_10am_apr]> INSERT INTO product(p_name, p_category, p_price, p_qty, p_brand, p_offer_price, p_details)
+    -> VALUES
+    -> ("Laptop", "Electronics", 49999, 10, "Apple", 45999, "RAM:8GB, ROM:1TB"),
+    -> ("Smartphone", "Electronics", 29999, 25, "Samsung", 27999, "RAM:6GB, ROM:128GB, Camera: 64MP"),
+    -> ("Washing Machine", "Home Appliances", 18999, 8, "LG", 17499, "Capacity:6.5kg, Type:Front Load"),
+    -> ("Bluetooth Speaker", "Electronics", 3999, 50, "JBL", 3499, "Battery:12hrs, Waterproof"),
+    -> ("LED TV", "Electronics", 39999, 5, "Sony", 36999, "Size:43inch, Resolution:4K UHD"),
+    -> ("Microwave Oven", "Home Appliances", 9999, 12, "Samsung", 8999, "Capacity:28L, Type:Convection"),
+    -> ("Headphones", "Electronics", 2499, 30, "Boat", 2199, "Type:Wireless, Noise Cancellation"),
+    -> ("Refrigerator", "Home Appliances", 29999, 7, "Whirlpool", 27999, "Capacity:245L, Type:Double Door"),
+    -> ("Tablet", "Electronics", 19999, 15, "Lenovo", 17999, "RAM:4GB, ROM:64GB, Screen:10.1inch"),
+    -> ("Smartwatch", "Electronics", 7999, 20, "Realme", 6999, "Display:AMOLED, Battery:7 days");
+Query OK, 10 rows affected (0.004 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+MariaDB [node_js_10am_apr]> select * from product;
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+| p_id | p_name            | p_category      | p_price | p_qty | p_brand   | p_offer_price | p_details                          |
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+|    1 | Laptop            | Electronics     |   49999 |    10 | Apple     | 45999         | RAM:8GB, ROM: 1TB                  |
+|    2 | Laptop            | Electronics     |   49999 |    10 | Apple     | 45999         | RAM:8GB, ROM:1TB                   |
+|    3 | Smartphone        | Electronics     |   29999 |    25 | Samsung   | 27999         | RAM:6GB, ROM:128GB, Camera: 64MP   |
+|    4 | Washing Machine   | Home Appliances |   18999 |     8 | LG        | 17499         | Capacity:6.5kg, Type:Front Load    |
+|    5 | Bluetooth Speaker | Electronics     |    3999 |    50 | JBL       | 3499          | Battery:12hrs, Waterproof          |
+|    6 | LED TV            | Electronics     |   39999 |     5 | Sony      | 36999         | Size:43inch, Resolution:4K UHD     |
+|    7 | Microwave Oven    | Home Appliances |    9999 |    12 | Samsung   | 8999          | Capacity:28L, Type:Convection      |
+|    8 | Headphones        | Electronics     |    2499 |    30 | Boat      | 2199          | Type:Wireless, Noise Cancellation  |
+|    9 | Refrigerator      | Home Appliances |   29999 |     7 | Whirlpool | 27999         | Capacity:245L, Type:Double Door    |
+|   10 | Tablet            | Electronics     |   19999 |    15 | Lenovo    | 17999         | RAM:4GB, ROM:64GB, Screen:10.1inch |
+|   11 | Smartwatch        | Electronics     |    7999 |    20 | Realme    | 6999          | Display:AMOLED, Battery:7 days     |
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+11 rows in set (0.000 sec)
+
+MariaDB [node_js_10am_apr]> select * from product where p_brand="samsung";
++------+----------------+-----------------+---------+-------+---------+---------------+----------------------------------+
+| p_id | p_name         | p_category      | p_price | p_qty | p_brand | p_offer_price | p_details                        |
++------+----------------+-----------------+---------+-------+---------+---------------+----------------------------------+
+|    3 | Smartphone     | Electronics     |   29999 |    25 | Samsung | 27999         | RAM:6GB, ROM:128GB, Camera: 64MP |
+|    7 | Microwave Oven | Home Appliances |    9999 |    12 | Samsung | 8999          | Capacity:28L, Type:Convection    |
++------+----------------+-----------------+---------+-------+---------+---------------+----------------------------------+
+2 rows in set (0.002 sec)
+
+MariaDB [node_js_10am_apr]> select p_name from product where p_category="Home Appliances";
++-----------------+
+| p_name          |
++-----------------+
+| Washing Machine |
+| Microwave Oven  |
+| Refrigerator    |
++-----------------+
+3 rows in set (0.001 sec)
+
+MariaDB [node_js_10am_apr]> select * from product where p_price>=20000;
++------+--------------+-----------------+---------+-------+-----------+---------------+----------------------------------+
+| p_id | p_name       | p_category      | p_price | p_qty | p_brand   | p_offer_price | p_details                        |
++------+--------------+-----------------+---------+-------+-----------+---------------+----------------------------------+
+|    1 | Laptop       | Electronics     |   49999 |    10 | Apple     | 45999         | RAM:8GB, ROM: 1TB                |
+|    2 | Laptop       | Electronics     |   49999 |    10 | Apple     | 45999         | RAM:8GB, ROM:1TB                 |
+|    3 | Smartphone   | Electronics     |   29999 |    25 | Samsung   | 27999         | RAM:6GB, ROM:128GB, Camera: 64MP |
+|    6 | LED TV       | Electronics     |   39999 |     5 | Sony      | 36999         | Size:43inch, Resolution:4K UHD   |
+|    9 | Refrigerator | Home Appliances |   29999 |     7 | Whirlpool | 27999         | Capacity:245L, Type:Double Door  |
++------+--------------+-----------------+---------+-------+-----------+---------------+----------------------------------+
+5 rows in set (0.001 sec)
+
+MariaDB [node_js_10am_apr]> select * from product where p_qty>=10 AND p_qty<2;0
+Empty set (0.002 sec)
+
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0' at line 1
+MariaDB [node_js_10am_apr]> select * from product where p_qty>=10 AND p_qty<20;
++------+----------------+-----------------+---------+-------+---------+---------------+------------------------------------+
+| p_id | p_name         | p_category      | p_price | p_qty | p_brand | p_offer_price | p_details                          |
++------+----------------+-----------------+---------+-------+---------+---------------+------------------------------------+
+|    1 | Laptop         | Electronics     |   49999 |    10 | Apple   | 45999         | RAM:8GB, ROM: 1TB                  |
+|    2 | Laptop         | Electronics     |   49999 |    10 | Apple   | 45999         | RAM:8GB, ROM:1TB                   |
+|    7 | Microwave Oven | Home Appliances |    9999 |    12 | Samsung | 8999          | Capacity:28L, Type:Convection      |
+|   10 | Tablet         | Electronics     |   19999 |    15 | Lenovo  | 17999         | RAM:4GB, ROM:64GB, Screen:10.1inch |
++------+----------------+-----------------+---------+-------+---------+---------------+------------------------------------+
+4 rows in set (0.001 sec)
+
+MariaDB [node_js_10am_apr]> select * from prouct where p_price>=10000 AND p_price<=20000;
+ERROR 1146 (42S02): Table 'node_js_10am_apr.prouct' doesn't exist
+MariaDB [node_js_10am_apr]> select * from product where p_price>=10000 AND p_price<=20000;
++------+-----------------+-----------------+---------+-------+---------+---------------+------------------------------------+
+| p_id | p_name          | p_category      | p_price | p_qty | p_brand | p_offer_price | p_details                          |
++------+-----------------+-----------------+---------+-------+---------+---------------+------------------------------------+
+|    4 | Washing Machine | Home Appliances |   18999 |     8 | LG      | 17499         | Capacity:6.5kg, Type:Front Load    |
+|   10 | Tablet          | Electronics     |   19999 |    15 | Lenovo  | 17999         | RAM:4GB, ROM:64GB, Screen:10.1inch |
++------+-----------------+-----------------+---------+-------+---------+---------------+------------------------------------+
+2 rows in set (0.002 sec)
+
+MariaDB [node_js_10am_apr]> select * from product where p_price>=9999 AND p_price<=19999;
++------+-----------------+-----------------+---------+-------+---------+---------------+------------------------------------+
+| p_id | p_name          | p_category      | p_price | p_qty | p_brand | p_offer_price | p_details                          |
++------+-----------------+-----------------+---------+-------+---------+---------------+------------------------------------+
+|    4 | Washing Machine | Home Appliances |   18999 |     8 | LG      | 17499         | Capacity:6.5kg, Type:Front Load    |
+|    7 | Microwave Oven  | Home Appliances |    9999 |    12 | Samsung | 8999          | Capacity:28L, Type:Convection      |
+|   10 | Tablet          | Electronics     |   19999 |    15 | Lenovo  | 17999         | RAM:4GB, ROM:64GB, Screen:10.1inch |
++------+-----------------+-----------------+---------+-------+---------+---------------+------------------------------------+
+3 rows in set (0.001 sec)
+
+MariaDB [node_js_10am_apr]> select * from product where p_price>=9999 AND p_price<19999;
++------+-----------------+-----------------+---------+-------+---------+---------------+---------------------------------+
+| p_id | p_name          | p_category      | p_price | p_qty | p_brand | p_offer_price | p_details                       |
++------+-----------------+-----------------+---------+-------+---------+---------------+---------------------------------+
+|    4 | Washing Machine | Home Appliances |   18999 |     8 | LG      | 17499         | Capacity:6.5kg, Type:Front Load |
+|    7 | Microwave Oven  | Home Appliances |    9999 |    12 | Samsung | 8999          | Capacity:28L, Type:Convection   |
++------+-----------------+-----------------+---------+-------+---------+---------------+---------------------------------+
+2 rows in set (0.001 sec)
+
+MariaDB [node_js_10am_apr]> select * from product where p_price BETWEEN 10000 AND 20000;
++------+-----------------+-----------------+---------+-------+---------+---------------+------------------------------------+
+| p_id | p_name          | p_category      | p_price | p_qty | p_brand | p_offer_price | p_details                          |
++------+-----------------+-----------------+---------+-------+---------+---------------+------------------------------------+
+|    4 | Washing Machine | Home Appliances |   18999 |     8 | LG      | 17499         | Capacity:6.5kg, Type:Front Load    |
+|   10 | Tablet          | Electronics     |   19999 |    15 | Lenovo  | 17999         | RAM:4GB, ROM:64GB, Screen:10.1inch |
++------+-----------------+-----------------+---------+-------+---------+---------------+------------------------------------+
+2 rows in set (0.001 sec)
+
+MariaDB [node_js_10am_apr]> select * from product where p_price BETWEEN 9999 AND 20000;
++------+-----------------+-----------------+---------+-------+---------+---------------+------------------------------------+
+| p_id | p_name          | p_category      | p_price | p_qty | p_brand | p_offer_price | p_details                          |
++------+-----------------+-----------------+---------+-------+---------+---------------+------------------------------------+
+|    4 | Washing Machine | Home Appliances |   18999 |     8 | LG      | 17499         | Capacity:6.5kg, Type:Front Load    |
+|    7 | Microwave Oven  | Home Appliances |    9999 |    12 | Samsung | 8999          | Capacity:28L, Type:Convection      |
+|   10 | Tablet          | Electronics     |   19999 |    15 | Lenovo  | 17999         | RAM:4GB, ROM:64GB, Screen:10.1inch |
++------+-----------------+-----------------+---------+-------+---------+---------------+------------------------------------+
+3 rows in set (0.001 sec)
+
+MariaDB [node_js_10am_apr]> select * from product;
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+| p_id | p_name            | p_category      | p_price | p_qty | p_brand   | p_offer_price | p_details                          |
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+|    1 | Laptop            | Electronics     |   49999 |    10 | Apple     | 45999         | RAM:8GB, ROM: 1TB                  |
+|    2 | Laptop            | Electronics     |   49999 |    10 | Apple     | 45999         | RAM:8GB, ROM:1TB                   |
+|    3 | Smartphone        | Electronics     |   29999 |    25 | Samsung   | 27999         | RAM:6GB, ROM:128GB, Camera: 64MP   |
+|    4 | Washing Machine   | Home Appliances |   18999 |     8 | LG        | 17499         | Capacity:6.5kg, Type:Front Load    |
+|    5 | Bluetooth Speaker | Electronics     |    3999 |    50 | JBL       | 3499          | Battery:12hrs, Waterproof          |
+|    6 | LED TV            | Electronics     |   39999 |     5 | Sony      | 36999         | Size:43inch, Resolution:4K UHD     |
+|    7 | Microwave Oven    | Home Appliances |    9999 |    12 | Samsung   | 8999          | Capacity:28L, Type:Convection      |
+|    8 | Headphones        | Electronics     |    2499 |    30 | Boat      | 2199          | Type:Wireless, Noise Cancellation  |
+|    9 | Refrigerator      | Home Appliances |   29999 |     7 | Whirlpool | 27999         | Capacity:245L, Type:Double Door    |
+|   10 | Tablet            | Electronics     |   19999 |    15 | Lenovo    | 17999         | RAM:4GB, ROM:64GB, Screen:10.1inch |
+|   11 | Smartwatch        | Electronics     |    7999 |    20 | Realme    | 6999          | Display:AMOLED, Battery:7 days     |
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+11 rows in set (0.003 sec)
+
+MariaDB [node_js_10am_apr]> select * from product ORDER BY p_offer_price;
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+| p_id | p_name            | p_category      | p_price | p_qty | p_brand   | p_offer_price | p_details                          |
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+|    4 | Washing Machine   | Home Appliances |   18999 |     8 | LG        | 17499         | Capacity:6.5kg, Type:Front Load    |
+|   10 | Tablet            | Electronics     |   19999 |    15 | Lenovo    | 17999         | RAM:4GB, ROM:64GB, Screen:10.1inch |
+|    8 | Headphones        | Electronics     |    2499 |    30 | Boat      | 2199          | Type:Wireless, Noise Cancellation  |
+|    3 | Smartphone        | Electronics     |   29999 |    25 | Samsung   | 27999         | RAM:6GB, ROM:128GB, Camera: 64MP   |
+|    9 | Refrigerator      | Home Appliances |   29999 |     7 | Whirlpool | 27999         | Capacity:245L, Type:Double Door    |
+|    5 | Bluetooth Speaker | Electronics     |    3999 |    50 | JBL       | 3499          | Battery:12hrs, Waterproof          |
+|    6 | LED TV            | Electronics     |   39999 |     5 | Sony      | 36999         | Size:43inch, Resolution:4K UHD     |
+|    1 | Laptop            | Electronics     |   49999 |    10 | Apple     | 45999         | RAM:8GB, ROM: 1TB                  |
+|    2 | Laptop            | Electronics     |   49999 |    10 | Apple     | 45999         | RAM:8GB, ROM:1TB                   |
+|   11 | Smartwatch        | Electronics     |    7999 |    20 | Realme    | 6999          | Display:AMOLED, Battery:7 days     |
+|    7 | Microwave Oven    | Home Appliances |    9999 |    12 | Samsung   | 8999          | Capacity:28L, Type:Convection      |
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+11 rows in set (0.000 sec)
+
+MariaDB [node_js_10am_apr]> select * from product ORDER BY p_offer_price ASC;
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+| p_id | p_name            | p_category      | p_price | p_qty | p_brand   | p_offer_price | p_details                          |
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+|    4 | Washing Machine   | Home Appliances |   18999 |     8 | LG        | 17499         | Capacity:6.5kg, Type:Front Load    |
+|   10 | Tablet            | Electronics     |   19999 |    15 | Lenovo    | 17999         | RAM:4GB, ROM:64GB, Screen:10.1inch |
+|    8 | Headphones        | Electronics     |    2499 |    30 | Boat      | 2199          | Type:Wireless, Noise Cancellation  |
+|    3 | Smartphone        | Electronics     |   29999 |    25 | Samsung   | 27999         | RAM:6GB, ROM:128GB, Camera: 64MP   |
+|    9 | Refrigerator      | Home Appliances |   29999 |     7 | Whirlpool | 27999         | Capacity:245L, Type:Double Door    |
+|    5 | Bluetooth Speaker | Electronics     |    3999 |    50 | JBL       | 3499          | Battery:12hrs, Waterproof          |
+|    6 | LED TV            | Electronics     |   39999 |     5 | Sony      | 36999         | Size:43inch, Resolution:4K UHD     |
+|    1 | Laptop            | Electronics     |   49999 |    10 | Apple     | 45999         | RAM:8GB, ROM: 1TB                  |
+|    2 | Laptop            | Electronics     |   49999 |    10 | Apple     | 45999         | RAM:8GB, ROM:1TB                   |
+|   11 | Smartwatch        | Electronics     |    7999 |    20 | Realme    | 6999          | Display:AMOLED, Battery:7 days     |
+|    7 | Microwave Oven    | Home Appliances |    9999 |    12 | Samsung   | 8999          | Capacity:28L, Type:Convection      |
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+11 rows in set (0.001 sec)
+
+MariaDB [node_js_10am_apr]> select * from product ORDER BY p_price;
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+| p_id | p_name            | p_category      | p_price | p_qty | p_brand   | p_offer_price | p_details                          |
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+|    8 | Headphones        | Electronics     |    2499 |    30 | Boat      | 2199          | Type:Wireless, Noise Cancellation  |
+|    5 | Bluetooth Speaker | Electronics     |    3999 |    50 | JBL       | 3499          | Battery:12hrs, Waterproof          |
+|   11 | Smartwatch        | Electronics     |    7999 |    20 | Realme    | 6999          | Display:AMOLED, Battery:7 days     |
+|    7 | Microwave Oven    | Home Appliances |    9999 |    12 | Samsung   | 8999          | Capacity:28L, Type:Convection      |
+|    4 | Washing Machine   | Home Appliances |   18999 |     8 | LG        | 17499         | Capacity:6.5kg, Type:Front Load    |
+|   10 | Tablet            | Electronics     |   19999 |    15 | Lenovo    | 17999         | RAM:4GB, ROM:64GB, Screen:10.1inch |
+|    3 | Smartphone        | Electronics     |   29999 |    25 | Samsung   | 27999         | RAM:6GB, ROM:128GB, Camera: 64MP   |
+|    9 | Refrigerator      | Home Appliances |   29999 |     7 | Whirlpool | 27999         | Capacity:245L, Type:Double Door    |
+|    6 | LED TV            | Electronics     |   39999 |     5 | Sony      | 36999         | Size:43inch, Resolution:4K UHD     |
+|    1 | Laptop            | Electronics     |   49999 |    10 | Apple     | 45999         | RAM:8GB, ROM: 1TB                  |
+|    2 | Laptop            | Electronics     |   49999 |    10 | Apple     | 45999         | RAM:8GB, ROM:1TB                   |
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+11 rows in set (0.032 sec)
+
+MariaDB [node_js_10am_apr]> select * from product ORDER BY p_qty;
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+| p_id | p_name            | p_category      | p_price | p_qty | p_brand   | p_offer_price | p_details                          |
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+|    6 | LED TV            | Electronics     |   39999 |     5 | Sony      | 36999         | Size:43inch, Resolution:4K UHD     |
+|    9 | Refrigerator      | Home Appliances |   29999 |     7 | Whirlpool | 27999         | Capacity:245L, Type:Double Door    |
+|    4 | Washing Machine   | Home Appliances |   18999 |     8 | LG        | 17499         | Capacity:6.5kg, Type:Front Load    |
+|    1 | Laptop            | Electronics     |   49999 |    10 | Apple     | 45999         | RAM:8GB, ROM: 1TB                  |
+|    2 | Laptop            | Electronics     |   49999 |    10 | Apple     | 45999         | RAM:8GB, ROM:1TB                   |
+|    7 | Microwave Oven    | Home Appliances |    9999 |    12 | Samsung   | 8999          | Capacity:28L, Type:Convection      |
+|   10 | Tablet            | Electronics     |   19999 |    15 | Lenovo    | 17999         | RAM:4GB, ROM:64GB, Screen:10.1inch |
+|   11 | Smartwatch        | Electronics     |    7999 |    20 | Realme    | 6999          | Display:AMOLED, Battery:7 days     |
+|    3 | Smartphone        | Electronics     |   29999 |    25 | Samsung   | 27999         | RAM:6GB, ROM:128GB, Camera: 64MP   |
+|    8 | Headphones        | Electronics     |    2499 |    30 | Boat      | 2199          | Type:Wireless, Noise Cancellation  |
+|    5 | Bluetooth Speaker | Electronics     |    3999 |    50 | JBL       | 3499          | Battery:12hrs, Waterproof          |
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+11 rows in set (0.014 sec)
+
+MariaDB [node_js_10am_apr]> select * from product ORDER BY p_qty ASC;
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+| p_id | p_name            | p_category      | p_price | p_qty | p_brand   | p_offer_price | p_details                          |
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+|    6 | LED TV            | Electronics     |   39999 |     5 | Sony      | 36999         | Size:43inch, Resolution:4K UHD     |
+|    9 | Refrigerator      | Home Appliances |   29999 |     7 | Whirlpool | 27999         | Capacity:245L, Type:Double Door    |
+|    4 | Washing Machine   | Home Appliances |   18999 |     8 | LG        | 17499         | Capacity:6.5kg, Type:Front Load    |
+|    1 | Laptop            | Electronics     |   49999 |    10 | Apple     | 45999         | RAM:8GB, ROM: 1TB                  |
+|    2 | Laptop            | Electronics     |   49999 |    10 | Apple     | 45999         | RAM:8GB, ROM:1TB                   |
+|    7 | Microwave Oven    | Home Appliances |    9999 |    12 | Samsung   | 8999          | Capacity:28L, Type:Convection      |
+|   10 | Tablet            | Electronics     |   19999 |    15 | Lenovo    | 17999         | RAM:4GB, ROM:64GB, Screen:10.1inch |
+|   11 | Smartwatch        | Electronics     |    7999 |    20 | Realme    | 6999          | Display:AMOLED, Battery:7 days     |
+|    3 | Smartphone        | Electronics     |   29999 |    25 | Samsung   | 27999         | RAM:6GB, ROM:128GB, Camera: 64MP   |
+|    8 | Headphones        | Electronics     |    2499 |    30 | Boat      | 2199          | Type:Wireless, Noise Cancellation  |
+|    5 | Bluetooth Speaker | Electronics     |    3999 |    50 | JBL       | 3499          | Battery:12hrs, Waterproof          |
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+11 rows in set (0.002 sec)
+
+MariaDB [node_js_10am_apr]> select * from product ORDER BY p_qty DESC;
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+| p_id | p_name            | p_category      | p_price | p_qty | p_brand   | p_offer_price | p_details                          |
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+|    5 | Bluetooth Speaker | Electronics     |    3999 |    50 | JBL       | 3499          | Battery:12hrs, Waterproof          |
+|    8 | Headphones        | Electronics     |    2499 |    30 | Boat      | 2199          | Type:Wireless, Noise Cancellation  |
+|    3 | Smartphone        | Electronics     |   29999 |    25 | Samsung   | 27999         | RAM:6GB, ROM:128GB, Camera: 64MP   |
+|   11 | Smartwatch        | Electronics     |    7999 |    20 | Realme    | 6999          | Display:AMOLED, Battery:7 days     |
+|   10 | Tablet            | Electronics     |   19999 |    15 | Lenovo    | 17999         | RAM:4GB, ROM:64GB, Screen:10.1inch |
+|    7 | Microwave Oven    | Home Appliances |    9999 |    12 | Samsung   | 8999          | Capacity:28L, Type:Convection      |
+|    1 | Laptop            | Electronics     |   49999 |    10 | Apple     | 45999         | RAM:8GB, ROM: 1TB                  |
+|    2 | Laptop            | Electronics     |   49999 |    10 | Apple     | 45999         | RAM:8GB, ROM:1TB                   |
+|    4 | Washing Machine   | Home Appliances |   18999 |     8 | LG        | 17499         | Capacity:6.5kg, Type:Front Load    |
+|    9 | Refrigerator      | Home Appliances |   29999 |     7 | Whirlpool | 27999         | Capacity:245L, Type:Double Door    |
+|    6 | LED TV            | Electronics     |   39999 |     5 | Sony      | 36999         | Size:43inch, Resolution:4K UHD     |
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+11 rows in set (0.004 sec)
+
+MariaDB [node_js_10am_apr]> select * from product order by p_qty;
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+| p_id | p_name            | p_category      | p_price | p_qty | p_brand   | p_offer_price | p_details                          |
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+|    6 | LED TV            | Electronics     |   39999 |     5 | Sony      | 36999         | Size:43inch, Resolution:4K UHD     |
+|    9 | Refrigerator      | Home Appliances |   29999 |     7 | Whirlpool | 27999         | Capacity:245L, Type:Double Door    |
+|    4 | Washing Machine   | Home Appliances |   18999 |     8 | LG        | 17499         | Capacity:6.5kg, Type:Front Load    |
+|    1 | Laptop            | Electronics     |   49999 |    10 | Apple     | 45999         | RAM:8GB, ROM: 1TB                  |
+|    2 | Laptop            | Electronics     |   49999 |    10 | Apple     | 45999         | RAM:8GB, ROM:1TB                   |
+|    7 | Microwave Oven    | Home Appliances |    9999 |    12 | Samsung   | 8999          | Capacity:28L, Type:Convection      |
+|   10 | Tablet            | Electronics     |   19999 |    15 | Lenovo    | 17999         | RAM:4GB, ROM:64GB, Screen:10.1inch |
+|   11 | Smartwatch        | Electronics     |    7999 |    20 | Realme    | 6999          | Display:AMOLED, Battery:7 days     |
+|    3 | Smartphone        | Electronics     |   29999 |    25 | Samsung   | 27999         | RAM:6GB, ROM:128GB, Camera: 64MP   |
+|    8 | Headphones        | Electronics     |    2499 |    30 | Boat      | 2199          | Type:Wireless, Noise Cancellation  |
+|    5 | Bluetooth Speaker | Electronics     |    3999 |    50 | JBL       | 3499          | Battery:12hrs, Waterproof          |
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+11 rows in set (0.000 sec)
+
+MariaDB [node_js_10am_apr]> select * from product;
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+| p_id | p_name            | p_category      | p_price | p_qty | p_brand   | p_offer_price | p_details                          |
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+|    1 | Laptop            | Electronics     |   49999 |    10 | Apple     | 45999         | RAM:8GB, ROM: 1TB                  |
+|    2 | Laptop            | Electronics     |   49999 |    10 | Apple     | 45999         | RAM:8GB, ROM:1TB                   |
+|    3 | Smartphone        | Electronics     |   29999 |    25 | Samsung   | 27999         | RAM:6GB, ROM:128GB, Camera: 64MP   |
+|    4 | Washing Machine   | Home Appliances |   18999 |     8 | LG        | 17499         | Capacity:6.5kg, Type:Front Load    |
+|    5 | Bluetooth Speaker | Electronics     |    3999 |    50 | JBL       | 3499          | Battery:12hrs, Waterproof          |
+|    6 | LED TV            | Electronics     |   39999 |     5 | Sony      | 36999         | Size:43inch, Resolution:4K UHD     |
+|    7 | Microwave Oven    | Home Appliances |    9999 |    12 | Samsung   | 8999          | Capacity:28L, Type:Convection      |
+|    8 | Headphones        | Electronics     |    2499 |    30 | Boat      | 2199          | Type:Wireless, Noise Cancellation  |
+|    9 | Refrigerator      | Home Appliances |   29999 |     7 | Whirlpool | 27999         | Capacity:245L, Type:Double Door    |
+|   10 | Tablet            | Electronics     |   19999 |    15 | Lenovo    | 17999         | RAM:4GB, ROM:64GB, Screen:10.1inch |
+|   11 | Smartwatch        | Electronics     |    7999 |    20 | Realme    | 6999          | Display:AMOLED, Battery:7 days     |
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+11 rows in set (0.001 sec)
+
+MariaDB [node_js_10am_apr]> select * from product where p_category="electronics";
++------+-------------------+-------------+---------+-------+---------+---------------+------------------------------------+
+| p_id | p_name            | p_category  | p_price | p_qty | p_brand | p_offer_price | p_details                          |
++------+-------------------+-------------+---------+-------+---------+---------------+------------------------------------+
+|    1 | Laptop            | Electronics |   49999 |    10 | Apple   | 45999         | RAM:8GB, ROM: 1TB                  |
+|    2 | Laptop            | Electronics |   49999 |    10 | Apple   | 45999         | RAM:8GB, ROM:1TB                   |
+|    3 | Smartphone        | Electronics |   29999 |    25 | Samsung | 27999         | RAM:6GB, ROM:128GB, Camera: 64MP   |
+|    5 | Bluetooth Speaker | Electronics |    3999 |    50 | JBL     | 3499          | Battery:12hrs, Waterproof          |
+|    6 | LED TV            | Electronics |   39999 |     5 | Sony    | 36999         | Size:43inch, Resolution:4K UHD     |
+|    8 | Headphones        | Electronics |    2499 |    30 | Boat    | 2199          | Type:Wireless, Noise Cancellation  |
+|   10 | Tablet            | Electronics |   19999 |    15 | Lenovo  | 17999         | RAM:4GB, ROM:64GB, Screen:10.1inch |
+|   11 | Smartwatch        | Electronics |    7999 |    20 | Realme  | 6999          | Display:AMOLED, Battery:7 days     |
++------+-------------------+-------------+---------+-------+---------+---------------+------------------------------------+
+8 rows in set (0.024 sec)
+
+MariaDB [node_js_10am_apr]> select * from product where p_category="electronics" order by p_price;
++------+-------------------+-------------+---------+-------+---------+---------------+------------------------------------+
+| p_id | p_name            | p_category  | p_price | p_qty | p_brand | p_offer_price | p_details                          |
++------+-------------------+-------------+---------+-------+---------+---------------+------------------------------------+
+|    8 | Headphones        | Electronics |    2499 |    30 | Boat    | 2199          | Type:Wireless, Noise Cancellation  |
+|    5 | Bluetooth Speaker | Electronics |    3999 |    50 | JBL     | 3499          | Battery:12hrs, Waterproof          |
+|   11 | Smartwatch        | Electronics |    7999 |    20 | Realme  | 6999          | Display:AMOLED, Battery:7 days     |
+|   10 | Tablet            | Electronics |   19999 |    15 | Lenovo  | 17999         | RAM:4GB, ROM:64GB, Screen:10.1inch |
+|    3 | Smartphone        | Electronics |   29999 |    25 | Samsung | 27999         | RAM:6GB, ROM:128GB, Camera: 64MP   |
+|    6 | LED TV            | Electronics |   39999 |     5 | Sony    | 36999         | Size:43inch, Resolution:4K UHD     |
+|    1 | Laptop            | Electronics |   49999 |    10 | Apple   | 45999         | RAM:8GB, ROM: 1TB                  |
+|    2 | Laptop            | Electronics |   49999 |    10 | Apple   | 45999         | RAM:8GB, ROM:1TB                   |
++------+-------------------+-------------+---------+-------+---------+---------------+------------------------------------+
+8 rows in set (0.002 sec)
+
+MariaDB [node_js_10am_apr]> select * from product where p_category="electronics" order by p_price LIMIT 3;
++------+-------------------+-------------+---------+-------+---------+---------------+-----------------------------------+
+| p_id | p_name            | p_category  | p_price | p_qty | p_brand | p_offer_price | p_details                         |
++------+-------------------+-------------+---------+-------+---------+---------------+-----------------------------------+
+|    8 | Headphones        | Electronics |    2499 |    30 | Boat    | 2199          | Type:Wireless, Noise Cancellation |
+|    5 | Bluetooth Speaker | Electronics |    3999 |    50 | JBL     | 3499          | Battery:12hrs, Waterproof         |
+|   11 | Smartwatch        | Electronics |    7999 |    20 | Realme  | 6999          | Display:AMOLED, Battery:7 days    |
++------+-------------------+-------------+---------+-------+---------+---------------+-----------------------------------+
+3 rows in set (0.002 sec)
+
+MariaDB [node_js_10am_apr]> select * from emp;
+ERROR 1932 (42S02): Table 'node_js_10am_apr.emp' doesn't exist in engine
+MariaDB [node_js_10am_apr]> select * from student;
+ERROR 1146 (42S02): Table 'node_js_10am_apr.student' doesn't exist
+MariaDB [node_js_10am_apr]> select * from students;
+ERROR 1932 (42S02): Table 'node_js_10am_apr.students' doesn't exist in engine
+MariaDB [node_js_10am_apr]> show tables;
++----------------------------+
+| Tables_in_node_js_10am_apr |
++----------------------------+
+| emp                        |
+| product                    |
+| students                   |
+| user                       |
++----------------------------+
+4 rows in set (0.008 sec)
+
+MariaDB [node_js_10am_apr]> select * from students;
+ERROR 1932 (42S02): Table 'node_js_10am_apr.students' doesn't exist in engine
+MariaDB [node_js_10am_apr]> select * from user;
+ERROR 1932 (42S02): Table 'node_js_10am_apr.user' doesn't exist in engine
+MariaDB [node_js_10am_apr]> select * from product;
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+| p_id | p_name            | p_category      | p_price | p_qty | p_brand   | p_offer_price | p_details                          |
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+|    1 | Laptop            | Electronics     |   49999 |    10 | Apple     | 45999         | RAM:8GB, ROM: 1TB                  |
+|    2 | Laptop            | Electronics     |   49999 |    10 | Apple     | 45999         | RAM:8GB, ROM:1TB                   |
+|    3 | Smartphone        | Electronics     |   29999 |    25 | Samsung   | 27999         | RAM:6GB, ROM:128GB, Camera: 64MP   |
+|    4 | Washing Machine   | Home Appliances |   18999 |     8 | LG        | 17499         | Capacity:6.5kg, Type:Front Load    |
+|    5 | Bluetooth Speaker | Electronics     |    3999 |    50 | JBL       | 3499          | Battery:12hrs, Waterproof          |
+|    6 | LED TV            | Electronics     |   39999 |     5 | Sony      | 36999         | Size:43inch, Resolution:4K UHD     |
+|    7 | Microwave Oven    | Home Appliances |    9999 |    12 | Samsung   | 8999          | Capacity:28L, Type:Convection      |
+|    8 | Headphones        | Electronics     |    2499 |    30 | Boat      | 2199          | Type:Wireless, Noise Cancellation  |
+|    9 | Refrigerator      | Home Appliances |   29999 |     7 | Whirlpool | 27999         | Capacity:245L, Type:Double Door    |
+|   10 | Tablet            | Electronics     |   19999 |    15 | Lenovo    | 17999         | RAM:4GB, ROM:64GB, Screen:10.1inch |
+|   11 | Smartwatch        | Electronics     |    7999 |    20 | Realme    | 6999          | Display:AMOLED, Battery:7 days     |
++------+-------------------+-----------------+---------+-------+-----------+---------------+------------------------------------+
+11 rows in set (0.058 sec)
+
+MariaDB [node_js_10am_apr]> select * customers where cust_address="Pune" LIMIT 2;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'customers where cust_address="Pune" LIMIT 2' at line 1
+MariaDB [node_js_10am_apr]> select * from product LIKE a%;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIKE a%' at line 1
+MariaDB [node_js_10am_apr]> select * from product LIKE A%;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIKE A%' at line 1
+MariaDB [node_js_10am_apr]> select * from product where p_brand LIKE a%;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+MariaDB [node_js_10am_apr]> select * from product where p_brand LIKE "a%";
++------+--------+-------------+---------+-------+---------+---------------+-------------------+
+| p_id | p_name | p_category  | p_price | p_qty | p_brand | p_offer_price | p_details         |
++------+--------+-------------+---------+-------+---------+---------------+-------------------+
+|    1 | Laptop | Electronics |   49999 |    10 | Apple   | 45999         | RAM:8GB, ROM: 1TB |
+|    2 | Laptop | Electronics |   49999 |    10 | Apple   | 45999         | RAM:8GB, ROM:1TB  |
++------+--------+-------------+---------+-------+---------+---------------+-------------------+
+2 rows in set (0.002 sec)
+
+MariaDB [node_js_10am_apr]> select * from product where p_brand LIKE "%g";
++------+-----------------+-----------------+---------+-------+---------+---------------+----------------------------------+
+| p_id | p_name          | p_category      | p_price | p_qty | p_brand | p_offer_price | p_details                        |
++------+-----------------+-----------------+---------+-------+---------+---------------+----------------------------------+
+|    3 | Smartphone      | Electronics     |   29999 |    25 | Samsung | 27999         | RAM:6GB, ROM:128GB, Camera: 64MP |
+|    4 | Washing Machine | Home Appliances |   18999 |     8 | LG      | 17499         | Capacity:6.5kg, Type:Front Load  |
+|    7 | Microwave Oven  | Home Appliances |    9999 |    12 | Samsung | 8999          | Capacity:28L, Type:Convection    |
++------+-----------------+-----------------+---------+-------+---------+---------------+----------------------------------+
+3 rows in set (0.007 sec)
+
+MariaDB [node_js_10am_apr]> select * from product where p_brand LIKE "%e%";
++------+------------+-------------+---------+-------+---------+---------------+------------------------------------+
+| p_id | p_name     | p_category  | p_price | p_qty | p_brand | p_offer_price | p_details                          |
++------+------------+-------------+---------+-------+---------+---------------+------------------------------------+
+|    1 | Laptop     | Electronics |   49999 |    10 | Apple   | 45999         | RAM:8GB, ROM: 1TB                  |
+|    2 | Laptop     | Electronics |   49999 |    10 | Apple   | 45999         | RAM:8GB, ROM:1TB                   |
+|   10 | Tablet     | Electronics |   19999 |    15 | Lenovo  | 17999         | RAM:4GB, ROM:64GB, Screen:10.1inch |
+|   11 | Smartwatch | Electronics |    7999 |    20 | Realme  | 6999          | Display:AMOLED, Battery:7 days     |
++------+------------+-------------+---------+-------+---------+---------------+------------------------------------+
+4 rows in set (0.001 sec)
+
+MariaDB [node_js_10am_apr]> select * from product Group BY p_category;
++------+-----------------+-----------------+---------+-------+---------+---------------+---------------------------------+
+| p_id | p_name          | p_category      | p_price | p_qty | p_brand | p_offer_price | p_details                       |
++------+-----------------+-----------------+---------+-------+---------+---------------+---------------------------------+
+|    1 | Laptop          | Electronics     |   49999 |    10 | Apple   | 45999         | RAM:8GB, ROM: 1TB               |
+|    4 | Washing Machine | Home Appliances |   18999 |     8 | LG      | 17499         | Capacity:6.5kg, Type:Front Load |
++------+-----------------+-----------------+---------+-------+---------+---------------+---------------------------------+
+2 rows in set (0.023 sec)
+
+MariaDB [node_js_10am_apr]> select * from product Group BY p_category;
++------+-----------------+-----------------+---------+-------+---------+---------------+---------------------------------+
+| p_id | p_name          | p_category      | p_price | p_qty | p_brand | p_offer_price | p_details                       |
++------+-----------------+-----------------+---------+-------+---------+---------------+---------------------------------+
+|    1 | Laptop          | Electronics     |   49999 |    10 | Apple   | 45999         | RAM:8GB, ROM: 1TB               |
+|    4 | Washing Machine | Home Appliances |   18999 |     8 | LG      | 17499         | Capacity:6.5kg, Type:Front Load |
++------+-----------------+-----------------+---------+-------+---------+---------------+---------------------------------+
+2 rows in set (0.035 sec)
+
+MariaDB [node_js_10am_apr]> select COUNT(*) from product;
++----------+
+| COUNT(*) |
++----------+
+|       11 |
++----------+
+1 row in set (0.013 sec)
+
+MariaDB [node_js_10am_apr]> select p_category, COUNT(*) from product GROUP BY p_category;
++-----------------+----------+
+| p_category      | COUNT(*) |
++-----------------+----------+
+| Electronics     |        8 |
+| Home Appliances |        3 |
++-----------------+----------+
+2 rows in set (0.002 sec)
+
+MariaDB [node_js_10am_apr]> nano day_4.sql
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'nano day_4.sql' at line 1
+MariaDB [node_js_10am_apr]> touch Day_4.sql;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'touch Day_4.sql' at line 1
+MariaDB [node_js_10am_apr]> touch;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'touch' at line 1
+MariaDB [node_js_10am_apr]>
