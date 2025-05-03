@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <%-include('cdn.ejs')%>
+  </head>
+  <body>
+    <h1>Users</h1>
+    <hr />
+
+    <!-- <h2><%- data[0].user_name%></h2> -->
+
+    <table class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>User ID</th>
+          <th>User Name</th>
+          <th>User EMail</th>
+          <th>User Password</th>
+          <th>User Mobile</th>
+          <th>User Gender</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <%data.map((user,index)=>{ %>
+
+        <tr>
+          <td><%-user.user_id%></td>
+          <td><%-user.user_name%></td>
+          <td><%-user.user_email%></td>
+          <td><%-user.user_pass%></td>
+          <td><%-user.user_mobile%></td>
+          <td><%-user.user_gender%></td>
+          <td>
+            <i class="fa fa-trash fw-bold text-danger me-3 cursor-pointer"></i>
+            <i class="fa fa-edit fw-bold text-primary cursor-pointer"></i>
+          </td>
+        </tr>
+
+        <% })%>
+      </tbody>
+    </table>
+  </body>
+</html>

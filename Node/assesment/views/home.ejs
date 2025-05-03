@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <%-include('cdn.ejs')%>
+  </head>
+
+  <body class="bg-light">
+    <div class="d-flex justify-content-center mt-5">
+      <a href="/userData" class="btn btn-secondary fw-bold w-25 text-center">
+        View Users
+      </a>
+    </div>
+
+    <div
+      class="container d-flex justify-content-center align-items-center min-vh-100"
+    >
+      <div
+        class="card shadow-lg p-4 rounded-4"
+        style="width: 100%; max-width: 500px"
+      >
+        <h3 class="text-center fw-bold mb-4">Register User</h3>
+
+        <form action="/saveUser" method="POST" class="fw-semibold">
+          <div class="mb-3">
+            <label for="user_name" class="form-label">User Name</label>
+            <input
+              type="text"
+              name="user_name"
+              id="user_name"
+              class="form-control"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="user_email" class="form-label">User Email</label>
+            <input
+              type="email"
+              name="user_email"
+              id="user_email"
+              class="form-control"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="user_pass" class="form-label">User Password</label>
+            <input
+              type="password"
+              name="user_pass"
+              id="user_pass"
+              class="form-control"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="user_mobile" class="form-label">User Mobile</label>
+            <input
+              type="text"
+              name="user_mobile"
+              id="user_mobile"
+              class="form-control"
+              required
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="user_gender" class="form-label">User Gender</label>
+            <select
+              name="user_gender"
+              id="user_gender"
+              class="form-select"
+              required
+            >
+              <option value="None" selected disabled></option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100 fw-bold">
+            Save User
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
