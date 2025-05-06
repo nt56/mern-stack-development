@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Edit User</h1>
+    <hr />
+
+    <form action="/editUser" method="POST">
+      <div>
+        <input
+          type="text"
+          id="empId"
+          name="empId"
+          value="<%-employee.empId%>"
+          hidden
+          readonly
+          required
+        />
+      </div>
+      <br /><br />
+      <div>
+        <label for="empName">Employee Name:</label>
+        <input
+          type="text"
+          id="empName"
+          name="empName"
+          value="<%-employee.empName%>"
+          required
+        />
+      </div>
+      <br /><br />
+      <div>
+        <label for="empEmail">Employee Email:</label>
+        <input
+          type="email"
+          id="empEmail"
+          name="empEmail"
+          value="<%-employee.empEmail%>"
+          required
+        />
+      </div>
+      <br /><br />
+      <div>
+        <label for="empPassword">Employee Password:</label>
+        <input
+          type="text"
+          id="empPassword"
+          name="empPassword"
+          value="<%-employee.empPassword%>"
+          required
+        />
+      </div>
+      <br /><br />
+      <div>
+        <label for="empMobile">Employee Mobile:</label>
+        <input
+          type="tel"
+          id="empMobile"
+          name="empMobile"
+          value="<%-employee.empMobile%>"
+          required
+        />
+      </div>
+      <br /><br />
+      <div>
+        <label for="empSalary">Employee Salary:</label>
+        <input
+          type="number"
+          id="empSalary"
+          name="empSalary"
+          value="<%-employee.empSalary%>"
+          required
+        />
+      </div>
+      <br /><br />
+      <div>
+        <label for="empRole">Employee Role:</label>
+        <select
+          id="empRole"
+          name="empRole"
+          required
+        >
+          <option value="" disabled <%= !employee.empRole ? 'selected' : '' %>>Select Role</option>
+          <option value="frontend" <%= employee.empRole === 'frontend' ? 'selected' : '' %>>Frontend</option>
+          <option value="backend" <%= employee.empRole === 'backend' ? 'selected' : '' %>>Backend</option>
+          <option value="fullstack" <%= employee.empRole === 'fullstack' ? 'selected' : '' %>>Fullstack</option>
+          <option value="tester" <%= employee.empRole === 'tester' ? 'selected' : '' %>>Tester</option>
+          <option value="manager" <%= employee.empRole === 'manager' ? 'selected' : '' %>>Manager</option>
+        </select>
+      </div>
+      <br /><br />
+      <div>
+        <label for="empSalary">Employee DOB:</label>
+        <input type="date" id="empDOB" name="empDOB" value="<%-new Date(employee.empDOB).toLocaleDateString('en-CA')%>" required />
+      </div>
+      <br /><br />
+
+      <button type="submit">Edit User</button>
+    </form>
+  </body>
+</html>
