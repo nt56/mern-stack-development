@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Product</title>
+    <%- include("cdn.ejs") %>
+    <!-- Make sure Bootstrap CDN is included here -->
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2 class="mb-4 text-center">Add Product</h2>
+      <hr />
+
+      <form action="/saveProduct" method="POST" class="row g-3">
+        <div class="col-md-6">
+          <label for="pname" class="form-label">Product Name</label>
+          <input
+            type="text"
+            name="pname"
+            id="pname"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <div class="col-md-6">
+          <label for="pcategory" class="form-label">Product Category</label>
+          <select name="pcategory" id="pcategory" class="form-select" required>
+            <option value="None">Select</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Groceerry">Groceerry</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Mens">Mens</option>
+            <option value="Kids">Kids</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label for="pprice" class="form-label">Product Price</label>
+          <input
+            type="text"
+            name="pprice"
+            id="pprice"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <div class="col-md-6">
+          <label for="pquantity" class="form-label">Product Quantity</label>
+          <input
+            type="number"
+            name="pquantity"
+            id="pquantity"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <div class="col-12">
+          <label for="pdetails" class="form-label">Product Details</label>
+          <textarea
+            name="pdetails"
+            id="pdetails"
+            rows="5"
+            class="form-control"
+            required
+          ></textarea>
+        </div>
+
+        <div class="col-12 text-center">
+          <button type="submit" class="btn btn-primary mt-3">
+            Save Product
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
