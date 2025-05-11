@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <%- include("cdn.ejs")%>
+  </head>
+  <body>
+    <h1>Add Student</h1>
+    <hr />
+
+    <div class="container mt-5"></div>
+        <form id="studentForm" onsubmit="return validateForm()" method="POST" action="/addStudent">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required />
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required />
+            </div>
+            <div class="mb-3">
+                <label for="course" class="form-label">Course</label>
+                <select class="form-select" id="course" name="course" required>
+                    <option value="" disabled selected>Select a course</option>
+                    <option value="MERN stack">MERN stack</option>
+                    <option value="React">React</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="Python">Python</option>
+                    <option value="Java">Java</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const course = document.getElementById("course").value;
+
+            if (!name || !email || !course) {
+                alert("All fields are required!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+  </body>
+</html>
