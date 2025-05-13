@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Multer File Uploading</h1>
+    <hr />
+
+    <form action="/saveForm" method="post" enctype="multipart/form-data">
+      <label for="name">Enter Username :</label>
+      <input type="text" name="username" id="username" required />
+      <br /><br />
+
+      <label for="profile">Upload Your Profile :</label>
+      <input type="file" name="file" id="file" required />
+      <br /><br />
+
+      <button>submit</button>
+    </form>
+  </body>
+</html>
