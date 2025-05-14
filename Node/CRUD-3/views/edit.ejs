@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <%- include("cdn.ejs") %>
+  </head>
+  <body>
+    <h1>Edit Character</h1>
+    <hr />
+
+    <form
+    action="/update-character"
+    method="POST"
+    enctype="multipart/form-data"
+    class="container mt-5 p-4 border rounded shadow"
+    >
+    
+    <input type="hidden" name="id" value="<%= character.id %>" />
+
+  <div class="mb-3">
+    <label for="characterName" class="form-label">Character Name:</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      class="form-control"
+      value="<%= character.name %>"
+      required
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="profile" class="form-label">Character Profile:</label>
+    <input
+      type="file"
+      id="profile_pic"
+      name="profile_pic"
+      class="form-control"
+      accept="image/*"
+    />
+    <img
+      src="/uploads/<%= character.profile_pic %>"
+      alt="Profile Picture"
+      class="img-thumbnail mt-2 mb-3"
+      style="max-width: 100px"
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">Character Email:</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      class="form-control"
+      value="<%= character.email %>"
+      required
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="gender" class="form-label">Character Gender:</label>
+    <select id="gender" name="gender" class="form-select" required>
+      <option value="male" <%= character.gender === "male" ? "selected" : "" %>>Male</option>
+      <option value="female" <%= character.gender === "female" ? "selected" : "" %>>Female</option>
+      <option value="other" <%= character.gender === "other" ? "selected" : "" %>>Other</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label for="role" class="form-label">Character Role:</label>
+    <select id="role" name="role" class="form-select" required>
+      <option value="emperor" <%= character.role === "emperor" ? "selected" : "" %>>Emperor</option>
+      <option value="swordsman" <%= character.role === "swordsman" ? "selected" : "" %>>Swordsman</option>
+      <option value="cook" <%= character.role === "cook" ? "selected" : "" %>>Cook</option>
+      <option value="doctor" <%= character.role === "doctor" ? "selected" : "" %>>Doctor</option>
+      <option value="fishman" <%= character.role === "fishman" ? "selected" : "" %>>Fishman</option>
+      <option value="navy" <%= character.role === "navy" ? "selected" : "" %>>Navy</option>
+      <option value="pirate" <%= character.role === "pirate" ? "selected" : "" %>>Pirate</option>
+    </select>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" class="btn btn-success">Update Character</button>
+  </div>
+</form>
+
+  </body>
+</html>
